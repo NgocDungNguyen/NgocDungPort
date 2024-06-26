@@ -8,9 +8,18 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    
-</head>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,vi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+</head>
 <body>
     <header>
         <nav>
@@ -19,7 +28,7 @@
                 <div></div>
                 <div></div>
                 <div></div>
-            </div>  
+            </div>
             <div class="nav-links">
                 <ul>
                     <li><a href="#" class="active">About</a></li>
@@ -32,9 +41,10 @@
                 </div>
             </div>
         </nav>
+        
         <div class="landing">
             <div class="intro">
-                <h3>I'M <span>Ngoc Dung Nguyen</span><br>Python Developer & Web<br>Developer Consultant</h3>
+                <h3>I'M <span>Ngoc Dung Nguyen</span><br>FullStack Developer &<br>Robotics Programmer</h3>
                 <button onclick="location.href='#contact-loc'">Contact Me</button>
             </div>
             <div class="socials">
@@ -44,6 +54,7 @@
         </div>
     </header>
 
+
     <section class="about">
         <h1 class="slide-in">About</h1>
         <div class="description slide-in">
@@ -51,13 +62,15 @@
             <p>I am currently pursuing a Bachelor of Information Technology with a minor in Enterprise Systems Development at the Royal Melbourne Institute of Technology. My passion lies in programming and web development, where I have honed my skills in various languages and technologies such as Python, JavaScript, and Node.js. Living and studying at Queensland University of Technology in Australia provided me with an invaluable opportunity to immerse myself in a highly international and professional environment, significantly enhancing both my technical competencies and cultural awareness.</p>
         </div>
     </section>
-    
+
+    <hr class="separator">
 
     <section class="education">
         <h1>Education</h1>
         <div class="edu-details fade-in">
             <h2>Royal Melbourne Institute of Technology (RMIT)</h2>
-            <h3>Bachelor of Information Technology, Minor in Enterprise Systems Development</h3>
+            <h3>Bachelor of Information Technology</h3>
+            <h3>Minor in Enterprise Systems Development</h3>
             <p>Expected May 2026 | Current GPA: 3.6</p>
         </div>
         <div class="edu-details fade-in">
@@ -67,36 +80,135 @@
         </div>
     </section>
 
+    <hr class="separator">
+
+    <section class="awards-certifications">
+        <h1>Awards and Certifications</h1>
+        <div class="columns-container">
+            <div class="awards-column">
+                <h2>Awards</h2>
+                <div class="awards-certs-details fade-in" id="awards-details">
+                    <!-- Awards -->
+                    <div class="award-cert-item">
+                        <h3>3rd Prize Robotacon HN</h3>
+                        <p>Issued by Sao Nam Education Center, 2017</p>
+                        <a href="#" class="see-more" data-award="1">See More</a>
+                    </div>
+                    <div class="award-cert-item">
+                        <h3>2nd Prize Robotic Programming Talent</h3>
+                        <p>Issued by Sao Nam Education Center, 2018</p>
+                        <a href="#" class="see-more" data-award="2">See More</a>
+                    </div>
+                    <div class="award-cert-item">
+                        <h3>1st Prize Robotacon HN</h3>
+                        <p>Issued by Sao Nam Education Center, 2018</p>
+                        <a href="#" class="see-more" data-award="3">See More</a>
+                    </div>
+                    <div class="award-cert-item">
+                        <h3>1st Prize International Youth Robot Vietnam 2018</h3>
+                        <p>Issued by Vietnam, 2018</p>
+                        <a href="#" class="see-more" data-award="4">See More</a>
+                    </div>
+                    <div class="award-cert-item">
+                        <h3>1st Prize - Science and Technology Competition for High School Students</h3>
+                        <p>Issued by Trường THCS Giảng Võ, 2018</p>
+                        <a href="#" class="see-more" data-award="5">See More</a>
+                    </div>
+                    <div class="award-cert-item">
+                        <h3>Excellent Award International Youth Robot Competition</h3>
+                        <p>Issued by International Youth Robot Competition, 2019</p>
+                        <a href="#" class="see-more" data-award="6">See More</a>
+                    </div>
+                    <div class="award-cert-item">
+                        <h3>Finalist-MakeX Robotics Competition 2019</h3>
+                        <p>Issued by KDI Education, Sở Khoa Học và Công Nghệ TP.HCM, 2019</p>
+                        <a href="#" class="see-more" data-award="7">See More</a>
+                    </div>
+                    <div class="award-cert-item">
+                        <h3>2nd Prize International Youth Robot Competition 2020</h3>
+                        <p>Issued by International Youth Robot Competition, 2020</p>
+                        <a href="#" class="see-more" data-award="8">See More</a>
+                    </div>
+                    <div class="award-cert-item">
+                        <h3>Top 10 RMIT Amazing Vietnam Student Competition 2021</h3>
+                        <p>Issued by RMIT and Bao Hoa Hoc Tro, 2021</p>
+                        <a href="#" class="see-more" data-award="9">See More</a>
+                    </div>
+                    <div class="award-cert-item">
+                        <h3>Semi-Finalist TechGenius by RMIT</h3>
+                        <p>Issued by RMIT 2021</p>
+                        <a href="#" class="see-more" data-award="10">See More</a>
+                    </div>
+                </div>
+
+
+                <button id="see-all-awards-btn">See All Awards</button>
+                <button id="see-less-awards-btn" style="display: none;">See Less Awards</button>
+
+            </div>
+    
+            <div class="certifications-column">
+                <h2>Certifications</h2>
+                <div class="awards-certs-details fade-in" id="certifications-details">
+                    <!-- Certifications -->
+                    <div class="award-cert-item">
+                        <h3>IT and Mechanical Mentoring VEX IQ Robotics Competition Full Volume 2024</h3>
+                        <p>Issued by STEAM VIETNAM, Vietnam VEX Robotics National Championship, Edison school, 2024</p>
+                        <a href="#" class="see-more" data-award="11">See More</a>
+                    </div>
+                    <div class="award-cert-item">
+                        <h3>Rookie of the Semester</h3>
+                        <p>Issued by Student Ambassador Team (RMIT Student Recruitment Department), 2024</p>
+                        <a href="#" class="see-more" data-award="12">See More</a>
+                    </div>
+                    <div class="award-cert-item">
+                        <h3>Participate in IYRC 2017 (Malaysia)</h3>
+                        <p>Issued by International Youth Robot Competition, 2017</p>
+                        <a href="#" class="see-more" data-award="13">See More</a>
+                    </div>
+                    <div class="award-cert-item">
+                        <h3>Participate in IYRC 2018 (Thailand)</h3>
+                        <p>Issued by International Youth Robot Competition, 2018</p>
+                        <a href="#" class="see-more" data-award="14">See More</a>
+                    </div>
+                </div>
+                <button id="see-all-certs-btn">See All Certifications</button>
+                <button id="see-less-certs-btn" style="display: none;">See Less Certifications</button>
+
+            </div>
+        </div>
+    </section>
+    
+
+    <div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="modal-left">
+            <div id="modal-body"></div>
+        </div>
+        <div class="modal-right" id="modal-images"></div>
+    </div>
+</div>
+
+
     <section class="skills">
         <h1>My Skills</h1>
         <div class="cards">
             <div class="skill-card">
-                <img src="asset/python.svg" alt="">
-                <h2>Python</h2>
-            </div>
-            <div class="skill-card">
-                <img src="asset/scratch.svg" alt="">
-                <h2>Scratch</h2>
-            </div>
-            <div class="skill-card">
-                <img src="asset/amazon-web-services.svg" alt="">
-                <h2>AWS</h2>
+                <img src="asset/html.svg" alt="">
+                <h2>HTML</h2>
             </div>
             <div class="skill-card">
                 <img src="asset/css.svg" alt="">
                 <h2>CSS</h2>
             </div>
             <div class="skill-card">
-                <img src="asset/git.svg" alt="">
-                <h2>GIT</h2>
-            </div>
-            <div class="skill-card">
-                <img src="asset/html.svg" alt="">
-                <h2>HTML</h2>
-            </div>
-            <div class="skill-card">
                 <img src="asset/js.svg" alt="">
                 <h2>JavaScript</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/nodejs.svg" alt="">
+                <h2>NodeJS</h2>
             </div>
             <div class="skill-card">
                 <img src="asset/mongodb.svg" alt="">
@@ -107,8 +219,28 @@
                 <h2>MySQL</h2>
             </div>
             <div class="skill-card">
-                <img src="asset/nodejs.svg" alt="">
-                <h2>NodeJS</h2>
+                <img src="asset/git.svg" alt="">
+                <h2>GIT</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/php.svg" alt="">
+                <h2>PHP</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/amazon-web-services.svg" alt="">
+                <h2>AWS</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/python.svg" alt="">
+                <h2>Python</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/arduino.svg" alt="">
+                <h2>Arduino</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/scratch.svg" alt="">
+                <h2>Scratch</h2>
             </div>
         </div>
     </section>
