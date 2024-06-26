@@ -1,0 +1,787 @@
+
+        @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            background-color: #34353b;
+        }
+
+        header {
+          height: 100vh;
+          padding: 36px 100px;
+          background-image: url(asset/images/z5046413768021_005ad77d038b39bf33d00120314fedee__1_-removebg-preview.png);
+          background-position: calc(100% - 150px) center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 100vw;
+      }
+      
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 90%;
+            z-index: 99;
+        }
+
+        header nav img {
+            height: 56px;
+            width: 56px;
+            object-fit: contain;
+            filter: invert(70%) sepia(96%) saturate(558%) hue-rotate(359deg) brightness(103%) contrast(106%);
+        }
+
+        header nav ul {
+            display: flex;
+        }
+
+        header nav ul li {
+            list-style: none;
+            margin: 0px 20px;
+        }
+
+        header nav ul li a {
+            color: #98999a;
+            text-decoration: none;
+            transition: all ease 0.5s;
+        }
+
+        header nav ul li a:hover {
+            color: #fbfbfb;
+        }
+
+        header nav ul li .active {
+            color: #fbfbfb;
+        }
+
+        header nav .search {
+            height: 48px;
+            width: 200px;
+            background-color: #3d3e42;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 4px;
+            border-radius: 10px;
+        }
+
+        header nav .search input {
+            border: none;
+            background-color: transparent;
+            width: 80%;
+            color: #fbfbfb;
+            outline: none;
+        }
+
+        header nav .search input::placeholder {
+            color: #98999a;
+            font-size: 16px;
+        }
+
+        header nav .search i {
+            color: #98999a;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fbfbfb;
+            margin: 4px;
+            transition: all 0.3s ease;
+        }
+        
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links ul li {
+            margin: 0 20px;
+        }
+
+        .nav-links ul li a {
+            color: #98999a;
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
+
+        .nav-links ul li a:hover {
+            color: #fbfbfb;
+        }
+
+        .nav-links ul li .active {
+            color: #fbfbfb;
+        }
+
+        .nav-links .search {
+            height: 48px;
+            width: 200px;
+            background-color: #3d3e42;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 4px;
+            border-radius: 10px;
+        }
+        
+        .nav-links .search input {
+            border: none;
+            background-color: transparent;
+            width: 80%;
+            color: #fbfbfb;
+            outline: none;
+        }
+
+        .nav-links .search input::placeholder {
+            color: #98999a;
+            font-size: 16px;
+        }
+
+        .nav-links .search i {
+            color: #98999a;
+        }
+
+        .landing {
+            display: flex;
+            height: 90vh;
+            background-color: transparent;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .landing .intro {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .landing .intro h3 {
+            color: #fbfbfb;
+            font-weight: 400;
+            font-size: 32px;
+            margin-left: 10vw;
+        }
+
+        .landing .intro h3 span {
+            color: #fec86a;
+            font-weight: 600;
+            font-size: 3.5rem;
+        }
+
+        .intro button {
+            height: 48px;
+            width: 144px;
+            margin-top: 2.5vh;
+            margin-left: 10vw;
+            background-color: transparent;
+            border: 2px solid #fec86a;
+            border-radius: 8px;
+            color: #fec86a;
+            font-size: 16px;
+            transition: all ease 0.5s;
+        }
+
+        .intro button:hover {
+            background-color: #fec86a;
+            color: #34353b;
+        }
+
+        .socials {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            margin-top: 50vh;
+        }
+
+        .socials .line {
+            background-color: #fec86a;
+            height: 15vh;
+            width: 2.5px;
+        }
+
+        .socials i {
+            color: #fbfbfb;
+            font-size: 36px;
+        }
+
+        .about, .skills, .portfolio, .experience, .education, .contact-me {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .slide-in {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+
+
+        .about {
+            height: auto;
+            width: 100vw;
+            padding: 100px;
+            background-color: #2c2d31;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about h1 {
+            font-size: 56px;
+            font-weight: 700;
+            color: #fbfbfb;
+            font-family: "Libre Baskerville", serif;
+            margin-bottom: 20px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .about .description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .about .description .line {
+            height: 2.5px;
+            width: 100px;
+            background-color: #fec86a;
+            margin-bottom: 20px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .about .description p {
+            color: #fbfbfb;
+            font-size: 20px;
+            line-height: 1.6;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .about .description p span {
+            color: #fec86a;
+        }
+
+        .skills {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 100px;
+        }
+
+        .skills h1 {
+            font-size: 56px;
+            font-weight: 700;
+            color: #fbfbfb;
+            font-family: "Libre Baskerville", serif;
+        }
+
+        .cards {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 2.5vh;
+        }
+
+        .skill-card {
+            height: 20vw;
+            width: 20vw;
+            background-color: #3d3e42;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5vh;
+            transition: all ease 0.5s;
+        }
+
+        .skill-card:hover {
+            background-color: #fec86a;
+        }
+
+        .skill-card img {
+            height: 7.5vw;
+            width: 7.5vw;
+            object-fit: contain;
+        }
+
+        .skill-card h2 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #fbfbfb;
+        }
+
+        .portfolio {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 100px;
+        }
+
+        .portfolio h1 {
+            font-size: 56px;
+            font-weight: 700;
+            color: #fbfbfb;
+            font-family: "Libre Baskerville", serif;
+        }
+
+        .portfolio-cards {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            margin-top: 50px;
+            gap: 2.5vh;
+        }
+
+        .portfolio-card {
+            position: relative;
+            height: 30vw;
+            width: 30vw;
+            background-color: #3d3e42;
+            border-radius: 20px;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5vh;
+            transition: all ease 0.5s;
+        }
+
+        .portfolio-card img {
+            position: relative;
+            height: 30vw;
+            width: 30vw;
+            object-fit: cover;
+        }
+
+        .portfolio-card .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            gap: 2.5vh;
+            height: 30vw;
+            width: 30vw;
+            background-color: #34353ba2;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            transition: all ease 0.5s;
+        }
+
+        .portfolio-card .overlay h3 {
+            color: #fbfbfb;
+            font-size: 24px;
+        }
+
+        .portfolio-card .overlay p {
+            color: #fbfbfb;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .portfolio-card .overlay button {
+            height: 36px;
+            width: 108px;
+            background-color: #fec86a;
+            border: 1px solid #fec86a;
+            border-radius: 8px;
+            color: #34353b;
+            font-size: 12px;
+            transition: all ease 0.5s;
+            cursor: pointer;
+        }
+
+        .portfolio-card .overlay:hover {
+            opacity: 1;
+        }
+
+        .portfolio button {
+            margin-top: 50px;
+            height: 48px;
+            width: 144px;
+            background-color: #fec86a;
+            border: 1px solid #fec86a;
+            border-radius: 8px;
+            color: #34353b;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all ease 0.5s;
+        }
+
+        .portfolio button:hover {
+            background-color: #cc9e4e;
+        }
+
+        .experience {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 100px;
+            background-color: #1f2023;
+        }
+
+        .experience h1 {
+            color: #fec86a;
+            font-size: 56px;
+            font-family: "Libre Baskerville", serif;
+            margin-bottom: 50px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .experience .exp {
+            background-color: #2c2d31;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 800px;
+            transition: all 0.5s ease-in-out;
+            transform: translateY(20px);
+            opacity: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience .exp:hover {
+            background-color: #faeed9;
+            transform: scale(1.05);
+        }
+
+        .experience .exp h2 {
+            color: #fec86a;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .experience .exp h3 {
+            color: #fbfbfb;
+            font-size: 20px;
+            font-weight: 400;
+            margin: 10px 0;
+        }
+
+        .experience .exp ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .experience .exp ul li {
+            color: #fbfbfb;
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .exp h2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fbfbfb;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .period {
+            color: #fec86a;
+            font-size: 16px;
+            font-weight: 400;
+            margin-left: 10px;
+        }
+        
+        .exp-desc h3 {
+            color: #fbfbfb;
+            font-size: 20px;
+            font-weight: 400;
+            margin: 10px 0;
+        }
+
+        .education {
+            width: 100vw;
+            padding: 50px 100px;
+            background-color: #2c2d31;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .education h1 {
+            font-size: 56px;
+            font-weight: 700;
+            color: #fec86a;
+            font-family: "Libre Baskerville", serif;
+            margin-bottom: 50px;
+        }
+
+        .education .edu-details {
+            background-color: #3d3e42;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .education .edu-details h2 {
+            color: #fec86a;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .education .edu-details h3 {
+            color: #fbfbfb;
+            font-size: 20px;
+            font-weight: 400;
+            margin: 10px 0;
+        }
+
+        .education .edu-details p {
+            color: #fbfbfb;
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .contact-me {
+            width: 100vw;
+            padding: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-me h1 {
+            font-size: 56px;
+            color: #fbfbfb;
+            font-family: "Libre Baskerville", serif;
+            font-weight: 700;
+        }
+
+        .contact {
+            display: flex;
+            gap: 24px;
+        }
+
+        .contact-card {
+            background-color: #fec86a;
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            gap: 10px;
+            margin-top: 7.5vh;
+        }
+
+       
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            header nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hamburger {
+                display: flex;
+                z-index: 101;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 250px;
+                height: 100%;
+                background-color: #34353b;
+                position: fixed;
+                top: 0;
+                right: 0;
+                padding: 20px;
+                z-index: 100;
+                transition: transform 0.3s ease;
+                transform: translateX(-100%);
+            }
+
+            .nav-links.expanded {
+                transform: translateX(0);
+            }
+
+            .nav-links ul {
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+            }
+
+            .nav-links ul li {
+                width: 100%;
+                text-align: left;
+            }
+
+            .nav-links .search {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .landing {
+                flex-direction: column;
+                align-items: flex-start;
+                height: auto;
+                padding: 20px;
+            }
+
+            .landing .intro h3 {
+                font-size: 24px;
+                margin-left: 0;
+            }
+
+            .intro button {
+                margin-left: 0;
+            }
+
+            .socials {
+                margin-top: 20px;
+            }
+
+            .about {
+                padding: 50px 20px;
+            }
+
+            .about h1 {
+                font-size: 36px;
+            }
+
+            .about .description p {
+                font-size: 16px;
+            }
+
+            .skills {
+                padding: 50px 20px;
+            }
+
+            .portfolio {
+                padding: 50px 20px;
+            }
+
+            .portfolio-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .experience {
+                padding: 50px 20px;
+            }
+
+            .experience h1 {
+                font-size: 36px;
+            }
+
+            .experience .exp {
+                padding: 20px;
+            }
+
+            .experience .exp h2 {
+                font-size: 24px;
+            }
+
+            .experience .exp h3 {
+                font-size: 18px;
+            }
+
+            .experience .exp ul li {
+                font-size: 14px;
+            }
+
+            .education {
+                padding: 50px 20px;
+            }
+
+            .education h1 {
+                font-size: 36px;
+            }
+
+            .education .edu-details {
+                padding: 20px;
+            }
+
+            .education .edu-details h2 {
+                font-size: 24px;
+            }
+
+            .education .edu-details h3 {
+                font-size: 18px;
+            }
+
+            .education .edu-details p {
+                font-size: 14px;
+            }
+
+            .contact-me {
+                padding: 50px 20px;
+            }
+        }

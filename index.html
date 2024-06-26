@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngoc Dung Nguyen - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="asset/carepy_logo-1.svg" alt="">
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#" class="active">About</a></li>
+                    <li><a href="#portfolio-loc">Portfolio</a></li>
+                    <li><a href="#contact-loc">Contact</a></li>
+                </ul>
+                <div class="search">
+                    <input type="text" placeholder="search">
+                    <i class="ri-search-line"></i>
+                </div>
+            </div>
+        </nav>
+        <div class="landing">
+            <div class="intro">
+                <h3>I'M <span>Ngoc Dung Nguyen</span><br>Python Developer & Web<br>Developer Consultant</h3>
+                <button onclick="location.href='#contact-loc'">Contact Me</button>
+            </div>
+            <div class="socials">
+                <div class="line"></div>
+                <a href="https://www.linkedin.com/in/ngoc-dung-nguyen-09014929a/" target="_blank"><i class="ri-linkedin-fill"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="about">
+        <h1 class="slide-in">About</h1>
+        <div class="description slide-in">
+            <div class="line"></div>
+            <p>I am currently pursuing a Bachelor of Information Technology with a minor in Enterprise Systems Development at the Royal Melbourne Institute of Technology. My passion lies in programming and web development, where I have honed my skills in various languages and technologies such as Python, JavaScript, and Node.js. Living and studying at Queensland University of Technology in Australia provided me with an invaluable opportunity to immerse myself in a highly international and professional environment, significantly enhancing both my technical competencies and cultural awareness.</p>
+        </div>
+    </section>
+    
+
+    <section class="education">
+        <h1>Education</h1>
+        <div class="edu-details fade-in">
+            <h2>Royal Melbourne Institute of Technology (RMIT)</h2>
+            <h3>Bachelor of Information Technology, Minor in Enterprise Systems Development</h3>
+            <p>Expected May 2026 | Current GPA: 3.6</p>
+        </div>
+        <div class="edu-details fade-in">
+            <h2>Queensland University of Technology (QLD, Australia)</h2>
+            <h3>Bachelor of Engineering (Mechatronics)</h3>
+            <p>Jul 2022 - Jun 2023</p>
+        </div>
+    </section>
+
+    <section class="skills">
+        <h1>My Skills</h1>
+        <div class="cards">
+            <div class="skill-card">
+                <img src="asset/python.svg" alt="">
+                <h2>Python</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/scratch.svg" alt="">
+                <h2>Scratch</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/amazon-web-services.svg" alt="">
+                <h2>AWS</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/css.svg" alt="">
+                <h2>CSS</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/git.svg" alt="">
+                <h2>GIT</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/html.svg" alt="">
+                <h2>HTML</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/js.svg" alt="">
+                <h2>JavaScript</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/mongodb.svg" alt="">
+                <h2>MongoDB</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/mysql.svg" alt="">
+                <h2>MySQL</h2>
+            </div>
+            <div class="skill-card">
+                <img src="asset/nodejs.svg" alt="">
+                <h2>NodeJS</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio-loc">
+        <h1>Projects</h1>
+        <div class="portfolio-cards">
+            <div class="portfolio-card">
+                <img src="asset/images/project1.jpg" alt="">
+                <div class="overlay">
+                    <h3>HR Management Website</h3>
+                    <p>A comprehensive platform for managing employees and company inventory.</p>
+                    <button onclick="location.href='https://github.com/your-profile/hr-management'">See More -></button>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <img src="asset/images/project2.jpg" alt="">
+                <div class="overlay">
+                    <h3>RMIT Team Finding Website</h3>
+                    <p>A website for RMIT students to find and connect with teammates based on GPA and course.</p>
+                    <button onclick="location.href='https://github.com/your-profile/team-finding'">See More -></button>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <img src="asset/images/project3.jpg" alt="">
+                <div class="overlay">
+                    <h3>Tracking Weather and Population Website</h3>
+                    <p>A website for tracking, displaying, and comparing temperature and population data globally.</p>
+                    <button onclick="location.href='https://github.com/your-profile/weather-population-tracking'">See More -></button>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <img src="asset/images/project4.jpg" alt="">
+                <div class="overlay">
+                    <h3>Tour Booking Website</h3>
+                    <p>A travel tour booking and review platform.</p>
+                    <button onclick="location.href='https://github.com/your-profile/tour-booking'">See More -></button>
+                </div>
+            </div>
+        </div>
+        <Button onclick="location.href='https://github.com/your-profile'">View More</Button>
+    </section>
+
+    <section class="experience">
+        <h1>Experience</h1>
+        <div class="exp fade-in">
+            <h2>IT Support Specialist Intern <span class="period">Sep 2023 - Present</span></h2>
+            <div class="exp-desc">
+                <h3>Thuy Thailand Consumer Goods, Ha Noi</h3>
+                <ul>
+                    <li>Developed a web-based inventory management app and built an e-commerce platform, significantly increasing customer engagement and operational efficiency.</li>
+                    <li>Built an e-commerce platform, increasing customer engagement by 10% monthly.</li>
+                    <li>Performed regular IT maintenance, improving operational efficiency.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="exp fade-in">
+            <h2>Technical Controller Part-time <span class="period">Apr 2024 – Present</span></h2>
+            <div class="exp-desc">
+                <h3>Game Master (Genesis Escape), Ha Noi</h3>
+                <ul>
+                    <li>Ensured a 100% gameplay success rate by troubleshooting customer issues and maintaining game devices.</li>
+                    <li>Achieved 98% customer satisfaction through efficient tech operation and role-play.</li>
+                    <li>Reported technical errors for timely maintenance, collaborating on daily system repairs.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="exp fade-in">
+            <h2>IT and Mechanical Mentor <span class="period">Nov 2023 – Feb 2024</span></h2>
+            <div class="exp-desc">
+                <h3>Edison School, Ha Noi</h3>
+                <ul>
+                    <li>Mentored four teams of 20+ students under an intensive training program preparing for the VEX IQ Competition 2024, leading to top 5, top 10, and two top 20 placements out of 120 teams.</li>
+                    <li>Recognized as a top dedicated student mentor by Edison School.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="exp fade-in">
+            <h2>Sale Associate <span class="period">Jul 2022 – Jun 2023</span></h2>
+            <div class="exp-desc">
+                <h3>Uniqlo, Australia</h3>
+                <ul>
+                    <li>Gained invaluable experience working in a leading global company, enhancing my understanding of professional and corporate environments.</li>
+                    <li>Collaborated with a diverse team, adhering to strict protocols and maintaining the high standards expected by Uniqlo Japan standard.</li>
+                    <li>Developed a strong work ethic and attention to detail, deeply influenced by the Japanese culture of precision and excellence.</li>
+                    <li>Learned and embodied Uniqlo’s exceptional customer service behaviors, which prioritize customer satisfaction and operational efficiency.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-me" id="contact-loc">
+        <h1>Contact Me</h1>
+        <div class="contact">
+            <div class="contact-card">
+                <i class="ri-message-3-line"></i>
+                <p>juneng2108@gmail.com</p>
+            </div>
+            <div class="contact-card">
+                <i class="ri-phone-line"></i>
+                <p>+84 865 949 604</p>
+            </div>
+            <div class="contact-card">
+                <i class="ri-map-pin-3-line"></i>
+                <p>Ha Noi, Viet Nam</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
