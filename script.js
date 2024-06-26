@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     const seeAllAwardsBtn = document.getElementById("see-all-awards-btn");
     const seeAllCertsBtn = document.getElementById("see-all-certs-btn");
