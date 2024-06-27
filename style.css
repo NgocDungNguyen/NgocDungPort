@@ -872,10 +872,14 @@ header nav .search i {
 
 .translate-btn {
     background-color: #fec86a;
-    color: #34353b;
     border: none;
+    color: #34353b;
     padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
     border-radius: 5px;
 }
@@ -883,23 +887,46 @@ header nav .search i {
 .translate-options {
     display: none;
     position: absolute;
-    background-color: #3d3e42;
+    background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    border-radius: 5px;
 }
 
 .translate-options a {
-    color: white;
+    color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
 .translate-options a:hover {
-    background-color: #575a5d;
+    background-color: #ddd;
 }
+
+.translate-container:hover .translate-options {
+    display: block;
+}
+.tts-button {
+    margin-top: 20px;
+    height: 48px;
+    width: 200px;
+    background-color: #fec86a;
+    border: 1px solid #fec86a;
+    border-radius: 8px;
+    color: #34353b;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+.tts-button:hover {
+    background-color: #cc9e4e;
+}
+
+
+
 
         @media (max-width: 768px) {
             header {
@@ -1140,15 +1167,9 @@ header nav .search i {
                 max-width: 100%;
             }
             .translate-container {
-                width: 100%;
+                position: static;
             }
-        
-            .translate-btn {
-                width: 100%;
-                text-align: left;
-            }
-        
             .translate-options {
-                width: 100%;
+                position: static;
             }
         }
