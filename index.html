@@ -8,6 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.14/i18next.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.1/jquery-i18next.min.js"></script>
 </head>
 
 <body>
@@ -26,12 +29,12 @@
                     <li><a href="#contact-loc" data-translate="contactMe">Contact</a></li>
                 </ul>
                 <div class="search">
-                    <input type="text" placeholder="search">
+                    <input type="text" placeholder="search" data-translate="searchPlaceholder">
                     <i class="ri-search-line"></i>
                 </div>
                 <!-- Language selector button -->
                 <div class="translate-container">
-                    <button class="translate-btn">Translate</button>
+                    <button class="translate-btn" data-translate="translateButton">Translate</button>
                     <div class="translate-options">
                         <a href="#" data-lang="en">English</a>
                         <a href="#" data-lang="vi">Vietnamese</a>
@@ -46,7 +49,7 @@
         <div class="landing">
             <div class="intro">
                 <h3 data-translate="intro">I'M <span>Ngoc Dung Nguyen</span><br>FullStack Developer &<br>Robotics Programmer</h3>
-                <button onclick="location.href='#contact-loc'" data-translate="contactMe">Contact Me</button>
+                <button onclick="location.href='#contact-loc'" data-translate="contactMeButton">Contact Me</button>
             </div>
             <div class="socials">
                 <div class="line"></div>
@@ -61,7 +64,7 @@
             <div class="line"></div>
             <p data-translate="aboutText">I am currently pursuing a Bachelor of Information Technology with a minor in Enterprise Systems Development at the Royal Melbourne Institute of Technology. My passion lies in programming and web development, where I have honed my skills in various languages and technologies such as Python, JavaScript, and Node.js. Living and studying at Queensland University of Technology in Australia provided me with an invaluable opportunity to immerse myself in a highly international and professional environment, significantly enhancing both my technical competencies and cultural awareness.</p>
         </div>
-        <button class="tts-button" data-section="about">Read About Section</button>
+        <button class="tts-button" data-section="about" data-translate="readAboutSection">Read About Section</button>
     </section>
 
     <hr class="separator">
@@ -69,17 +72,17 @@
     <section class="education" id="education">
         <h1 data-translate="education">Education</h1>
         <div class="edu-details fade-in">
-            <h2>Royal Melbourne Institute of Technology (RMIT)</h2>
-            <h3>Bachelor of Information Technology</h3>
-            <h3>Minor in Enterprise Systems Development</h3>
-            <p>Expected May 2026 | Current GPA: 3.6</p>
+            <h2 data-translate="rmitTitle">Royal Melbourne Institute of Technology (RMIT)</h2>
+            <h3 data-translate="rmitDegree">Bachelor of Information Technology</h3>
+            <h3 data-translate="rmitMinor">Minor in Enterprise Systems Development</h3>
+            <p data-translate="rmitGpa">Expected May 2026 | Current GPA: 3.6</p>
         </div>
         <div class="edu-details fade-in">
-            <h2>Queensland University of Technology (QLD, Australia)</h2>
-            <h3>Bachelor of Engineering (Mechatronics)</h3>
-            <p>Jul 2022 - Jun 2023</p>
+            <h2 data-translate="qutTitle">Queensland University of Technology (QLD, Australia)</h2>
+            <h3 data-translate="qutDegree">Bachelor of Engineering (Mechatronics)</h3>
+            <p data-translate="qutDuration">Jul 2022 - Jun 2023</p>
         </div>
-        <button class="tts-button" data-section="education">Read Education Section</button>
+        <button class="tts-button" data-section="education" data-translate="readEducationSection">Read Education Section</button>
     </section>
 
     <hr class="separator">
@@ -92,61 +95,59 @@
                 <div class="awards-certs-details fade-in" id="awards-details">
                     <!-- Awards -->
                     <div class="award-cert-item">
-                        <h3>3rd Prize Robotacon HN</h3>
-                        <p>Issued by Sao Nam Education Center, 2017</p>
-                        <a href="#" class="see-more" data-award="1">See More</a>
+                        <h3 data-translate="award1Title">3rd Prize Robotacon HN</h3>
+                        <p data-translate="award1Desc">Issued by Sao Nam Education Center, 2017</p>
+                        <a href="#" class="see-more" data-award="1" data-translate="seeMore">See More</a>
                     </div>
                     <div class="award-cert-item">
-                        <h3>2nd Prize Robotic Programming Talent</h3>
-                        <p>Issued by Sao Nam Education Center, 2018</p>
-                        <a href="#" class="see-more" data-award="2">See More</a>
+                        <h3 data-translate="award2Title">2nd Prize Robotic Programming Talent</h3>
+                        <p data-translate="award2Desc">Issued by Sao Nam Education Center, 2018</p>
+                        <a href="#" class="see-more" data-award="2" data-translate="seeMore">See More</a>
                     </div>
                     <div class="award-cert-item">
-                        <h3>1st Prize Robotacon HN</h3>
-                        <p>Issued by Sao Nam Education Center, 2018</p>
-                        <a href="#" class="see-more" data-award="3">See More</a>
+                        <h3 data-translate="award3Title">1st Prize Robotacon HN</h3>
+                        <p data-translate="award3Desc">Issued by Sao Nam Education Center, 2018</p>
+                        <a href="#" class="see-more" data-award="3" data-translate="seeMore">See More</a>
                     </div>
                     <div class="award-cert-item">
-                        <h3>1st Prize International Youth Robot Vietnam 2018</h3>
-                        <p>Issued by Vietnam, 2018</p>
-                        <a href="#" class="see-more" data-award="4">See More</a>
+                        <h3 data-translate="award4Title">1st Prize International Youth Robot Vietnam 2018</h3>
+                        <p data-translate="award4Desc">Issued by Vietnam, 2018</p>
+                        <a href="#" class="see-more" data-award="4" data-translate="seeMore">See More</a>
                     </div>
                     <div class="award-cert-item">
-                        <h3>1st Prize - Science and Technology Competition for High School Students</h3>
-                        <p>Issued by Trường THCS Giảng Võ, 2018</p>
-                        <a href="#" class="see-more" data-award="5">See More</a>
+                        <h3 data-translate="award5Title">1st Prize - Science and Technology Competition for High School Students</h3>
+                        <p data-translate="award5Desc">Issued by Trường THCS Giảng Võ, 2018</p>
+                        <a href="#" class="see-more" data-award="5" data-translate="seeMore">See More</a>
                     </div>
                     <div class="award-cert-item">
-                        <h3>Excellent Award International Youth Robot Competition</h3>
-                        <p>Issued by International Youth Robot Competition, 2019</p>
-                        <a href="#" class="see-more" data-award="6">See More</a>
+                        <h3 data-translate="award6Title">Excellent Award International Youth Robot Competition</h3>
+                        <p data-translate="award6Desc">Issued by International Youth Robot Competition, 2019</p>
+                        <a href="#" class="see-more" data-award="6" data-translate="seeMore">See More</a>
                     </div>
                     <div class="award-cert-item">
-                        <h3>Finalist-MakeX Robotics Competition 2019</h3>
-                        <p>Issued by KDI Education, Sở Khoa Học và Công Nghệ TP.HCM, 2019</p>
-                        <a href="#" class="see-more" data-award="7">See More</a>
+                        <h3 data-translate="award7Title">Finalist-MakeX Robotics Competition 2019</h3>
+                        <p data-translate="award7Desc">Issued by KDI Education, Sở Khoa Học và Công Nghệ TP.HCM, 2019</p>
+                        <a href="#" class="see-more" data-award="7" data-translate="seeMore">See More</a>
                     </div>
                     <div class="award-cert-item">
-                        <h3>2nd Prize International Youth Robot Competition 2020</h3>
-                        <p>Issued by International Youth Robot Competition, 2020</p>
-                        <a href="#" class="see-more" data-award="8">See More</a>
+                        <h3 data-translate="award8Title">2nd Prize International Youth Robot Competition 2020</h3>
+                        <p data-translate="award8Desc">Issued by International Youth Robot Competition, 2020</p>
+                        <a href="#" class="see-more" data-award="8" data-translate="seeMore">See More</a>
                     </div>
                     <div class="award-cert-item">
-                        <h3>Top 10 RMIT Amazing Vietnam Student Competition 2021</h3>
-                        <p>Issued by RMIT and Bao Hoa Hoc Tro, 2021</p>
-                        <a href="#" class="see-more" data-award="9">See More</a>
+                        <h3 data-translate="award9Title">Top 10 RMIT Amazing Vietnam Student Competition 2021</h3>
+                        <p data-translate="award9Desc">Issued by RMIT and Bao Hoa Hoc Tro, 2021</p>
+                        <a href="#" class="see-more" data-award="9" data-translate="seeMore">See More</a>
                     </div>
                     <div class="award-cert-item">
-                        <h3>Semi-Finalist TechGenius by RMIT</h3>
-                        <p>Issued by RMIT 2021</p>
-                        <a href="#" class="see-more" data-award="10">See More</a>
+                        <h3 data-translate="award10Title">Semi-Finalist TechGenius by RMIT</h3>
+                        <p data-translate="award10Desc">Issued by RMIT 2021</p>
+                        <a href="#" class="see-more" data-award="10" data-translate="seeMore">See More</a>
                     </div>
                 </div>
 
-
-                <button id="see-all-awards-btn">See All Awards</button>
-                <button id="see-less-awards-btn" style="display: none;">See Less Awards</button>
-
+                <button id="see-all-awards-btn" data-translate="seeAllAwards">See All Awards</button>
+                <button id="see-less-awards-btn" style="display: none;" data-translate="seeLessAwards">See Less Awards</button>
             </div>
     
             <div class="certifications-column">
@@ -154,100 +155,96 @@
                 <div class="awards-certs-details fade-in" id="certifications-details">
                     <!-- Certifications -->
                     <div class="award-cert-item">
-                        <h3>IT and Mechanical Mentoring VEX IQ Robotics Competition Full Volume 2024</h3>
-                        <p>Issued by STEAM VIETNAM, Vietnam VEX Robotics National Championship, Edison school, 2024</p>
-                        <a href="#" class="see-more" data-award="11">See More</a>
+                        <h3 data-translate="cert1Title">IT and Mechanical Mentoring VEX IQ Robotics Competition Full Volume 2024</h3>
+                        <p data-translate="cert1Desc">Issued by STEAM VIETNAM, Vietnam VEX Robotics National Championship, Edison school, 2024</p>
+                        <a href="#" class="see-more" data-award="11" data-translate="seeMore">See More</a>
                     </div>
                     <div class="award-cert-item">
-                        <h3>Rookie of the Semester</h3>
-                        <p>Issued by Student Ambassador Team (RMIT Student Recruitment Department), 2024</p>
-                        <a href="#" class="see-more" data-award="12">See More</a>
+                        <h3 data-translate="cert2Title">Rookie of the Semester</h3>
+                        <p data-translate="cert2Desc">Issued by Student Ambassador Team (RMIT Student Recruitment Department), 2024</p>
+                        <a href="#" class="see-more" data-award="12" data-translate="seeMore">See More</a>
                     </div>
                     <div class="award-cert-item">
-                        <h3>Participate in IYRC 2017 (Malaysia)</h3>
-                        <p>Issued by International Youth Robot Competition, 2017</p>
-                        <a href="#" class="see-more" data-award="13">See More</a>
+                        <h3 data-translate="cert3Title">Participate in IYRC 2017 (Malaysia)</h3>
+                        <p data-translate="cert3Desc">Issued by International Youth Robot Competition, 2017</p>
+                        <a href="#" class="see-more" data-award="13" data-translate="seeMore">See More</a>
                     </div>
                     <div class="award-cert-item">
-                        <h3>Participate in IYRC 2018 (Thailand)</h3>
-                        <p>Issued by International Youth Robot Competition, 2018</p>
-                        <a href="#" class="see-more" data-award="14">See More</a>
+                        <h3 data-translate="cert4Title">Participate in IYRC 2018 (Thailand)</h3>
+                        <p data-translate="cert4Desc">Issued by International Youth Robot Competition, 2018</p>
+                        <a href="#" class="see-more" data-award="14" data-translate="seeMore">See More</a>
                     </div>
                 </div>
-                <button id="see-all-certs-btn">See All Certifications</button>
-                <button id="see-less-certs-btn" style="display: none;">See Less Certifications</button>
-
+                <button id="see-all-certs-btn" data-translate="seeAllCerts">See All Certifications</button>
+                <button id="see-less-certs-btn" style="display: none;" data-translate="seeLessCerts">See Less Certifications</button>
             </div>
         </div>
-        <button class="tts-button" data-section="awards-certifications">Read Awards and Certifications Section</button>
-
+        <button class="tts-button" data-section="awards-certifications" data-translate="readAwardsCertsSection">Read Awards and Certifications Section</button>
     </section>
     
-
     <div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <div class="modal-left">
-            <div id="modal-body"></div>
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-left">
+                <div id="modal-body"></div>
+            </div>
+            <div class="modal-right" id="modal-images"></div>
         </div>
-        <div class="modal-right" id="modal-images"></div>
     </div>
-</div>
-
 
     <section class="skills">
-        <h1 data-translate="skills">My Skills</h1>
+        <h1 data-translate="skills">Skills</h1>
         <div class="cards">
             <div class="skill-card">
                 <img src="asset/html.svg" alt="">
-                <h2>HTML</h2>
+                <h2 data-translate="html">HTML</h2>
             </div>
             <div class="skill-card">
                 <img src="asset/css.svg" alt="">
-                <h2>CSS</h2>
+                <h2 data-translate="css">CSS</h2>
             </div>
             <div class="skill-card">
                 <img src="asset/js.svg" alt="">
-                <h2>JavaScript</h2>
+                <h2 data-translate="javascript">JavaScript</h2>
             </div>
             <div class="skill-card">
                 <img src="asset/nodejs.svg" alt="">
-                <h2>NodeJS</h2>
+                <h2 data-translate="nodejs">NodeJS</h2>
             </div>
             <div class="skill-card">
                 <img src="asset/mongodb.svg" alt="">
-                <h2>MongoDB</h2>
+                <h2 data-translate="mongodb">MongoDB</h2>
             </div>
             <div class="skill-card">
                 <img src="asset/mysql.svg" alt="">
-                <h2>MySQL</h2>
+                <h2 data-translate="mysql">MySQL</h2>
             </div>
             <div class="skill-card">
                 <img src="asset/git.svg" alt="">
-                <h2>GIT</h2>
+                <h2 data-translate="git">GIT</h2>
             </div>
             <div class="skill-card">
                 <img src="asset/php.svg" alt="">
-                <h2>PHP</h2>
+                <h2 data-translate="php">PHP</h2>
             </div>
             <div class="skill-card">
                 <img src="asset/amazon-web-services.svg" alt="">
-                <h2>AWS</h2>
+                <h2 data-translate="aws">AWS</h2>
             </div>
             <div class="skill-card">
                 <img src="asset/python.svg" alt="">
-                <h2>Python</h2>
+                <h2 data-translate="python">Python</h2>
             </div>
             <div class="skill-card">
                 <img src="asset/arduino.svg" alt="">
-                <h2>Arduino</h2>
+                <h2 data-translate="arduino">Arduino</h2>
             </div>
             <div class="skill-card">
                 <img src="asset/scratch.svg" alt="">
-                <h2>Scratch</h2>
+                <h2 data-translate="scratch">Scratch</h2>
             </div>
         </div>
-        <button class="tts-button" data-section="skills">Read Skills Section</button>
+        <button class="tts-button" data-section="skills" data-translate="readSkillsSection">Read Skills Section</button>
     </section>
 
     <section class="portfolio" id="portfolio-loc">
@@ -256,87 +253,87 @@
             <div class="portfolio-card">
                 <img src="asset/images/project1.jpg" alt="">
                 <div class="overlay">
-                    <h3>HR Management Website</h3>
-                    <p>A comprehensive platform for managing employees and company inventory.</p>
-                    <button onclick="location.href='https://github.com/your-profile/hr-management'">See More -></button>
+                    <h3 data-translate="project1Title">HR Management Website</h3>
+                    <p data-translate="project1Desc">A comprehensive platform for managing employees and company inventory.</p>
+                    <button onclick="location.href='https://github.com/your-profile/hr-management'" data-translate="seeMore">See More -></button>
                 </div>
             </div>
             <div class="portfolio-card">
                 <img src="asset/images/project2.jpg" alt="">
                 <div class="overlay">
-                    <h3>RMIT Team Finding Website</h3>
-                    <p>A website for RMIT students to find and connect with teammates based on GPA and course.</p>
-                    <button onclick="location.href='https://github.com/your-profile/team-finding'">See More -></button>
+                    <h3 data-translate="project2Title">RMIT Team Finding Website</h3>
+                    <p data-translate="project2Desc">A website for RMIT students to find and connect with teammates based on GPA and course.</p>
+                    <button onclick="location.href='https://github.com/your-profile/team-finding'" data-translate="seeMore">See More -></button>
                 </div>
             </div>
             <div class="portfolio-card">
                 <img src="asset/images/project3.jpg" alt="">
                 <div class="overlay">
-                    <h3>Tracking Weather and Population Website</h3>
-                    <p>A website for tracking, displaying, and comparing temperature and population data globally.</p>
-                    <button onclick="location.href='https://github.com/your-profile/weather-population-tracking'">See More -></button>
+                    <h3 data-translate="project3Title">Tracking Weather and Population Website</h3>
+                    <p data-translate="project3Desc">A website for tracking, displaying, and comparing temperature and population data globally.</p>
+                    <button onclick="location.href='https://github.com/your-profile/weather-population-tracking'" data-translate="seeMore">See More -></button>
                 </div>
             </div>
             <div class="portfolio-card">
                 <img src="asset/images/project4.jpg" alt="">
                 <div class="overlay">
-                    <h3>Tour Booking Website</h3>
-                    <p>A travel tour booking and review platform.</p>
-                    <button onclick="location.href='https://github.com/your-profile/tour-booking'">See More -></button>
+                    <h3 data-translate="project4Title">Tour Booking Website</h3>
+                    <p data-translate="project4Desc">A travel tour booking and review platform.</p>
+                    <button onclick="location.href='https://github.com/your-profile/tour-booking'" data-translate="seeMore">See More -></button>
                 </div>
             </div>
         </div>
-        <Button onclick="location.href='https://github.com/your-profile'">View More</Button>
-        <button class="tts-button" data-section="portfolio">Read Portfolio Section</button>
+        <Button onclick="location.href='https://github.com/your-profile'" data-translate="viewMore">View More</Button>
+        <button class="tts-button" data-section="portfolio" data-translate="readPortfolioSection">Read Portfolio Section</button>
     </section>
-
+    
     <section class="experience">
         <h1 data-translate="experience">Experience</h1>
         <div class="exp fade-in">
-            <h2>IT Support Specialist Intern <span class="period">Sep 2023 - Present</span></h2>
+            <h2 data-translate="exp1Title">IT Support Specialist Intern <span class="period">Sep 2023 - Present</span></h2>
             <div class="exp-desc">
-                <h3>Thuy Thailand Consumer Goods, Ha Noi</h3>
+                <h3 data-translate="exp1Company">Thuy Thailand Consumer Goods, Ha Noi</h3>
                 <ul>
-                    <li>Developed a web-based inventory management app and built an e-commerce platform, significantly increasing customer engagement and operational efficiency.</li>
-                    <li>Built an e-commerce platform, increasing customer engagement by 10% monthly.</li>
-                    <li>Performed regular IT maintenance, improving operational efficiency.</li>
+                    <li data-translate="exp1Desc1">Developed a web-based inventory management app and built an e-commerce platform, significantly increasing customer engagement and operational efficiency.</li>
+                    <li data-translate="exp1Desc2">Built an e-commerce platform, increasing customer engagement by 10% monthly.</li>
+                    <li data-translate="exp1Desc3">Performed regular IT maintenance, improving operational efficiency.</li>
                 </ul>
             </div>
         </div>
         <div class="exp fade-in">
-            <h2>Technical Controller Part-time <span class="period">Apr 2024 – Present</span></h2>
+            <h2 data-translate="exp2Title">Technical Controller Part-time <span class="period">Apr 2024 – Present</span></h2>
             <div class="exp-desc">
-                <h3>Game Master (Genesis Escape), Ha Noi</h3>
+                <h3 data-translate="exp2Company">Game Master (Genesis Escape), Ha Noi</h3>
                 <ul>
-                    <li>Ensured a 100% gameplay success rate by troubleshooting customer issues and maintaining game devices.</li>
-                    <li>Achieved 98% customer satisfaction through efficient tech operation and role-play.</li>
-                    <li>Reported technical errors for timely maintenance, collaborating on daily system repairs.</li>
+                    <li data-translate="exp2Desc1">Ensured a 100% gameplay success rate by troubleshooting customer issues and maintaining game devices.</li>
+                    <li data-translate="exp2Desc2">Achieved 98% customer satisfaction through efficient tech operation and role-play.</li>
+                    <li data-translate="exp2Desc3">Reported technical errors for timely maintenance, collaborating on daily system repairs.</li>
                 </ul>
             </div>
         </div>
         <div class="exp fade-in">
-            <h2>IT and Mechanical Mentor <span class="period">Nov 2023 – Feb 2024</span></h2>
+            <h2 data-translate="exp3Title">IT and Mechanical Mentor <span class="period">Nov 2023 – Feb 2024</span></h2>
             <div class="exp-desc">
-                <h3>Edison School, Ha Noi</h3>
+                <h3 data-translate="exp3Company">Edison School, Ha Noi</h3>
                 <ul>
-                    <li>Mentored four teams of 20+ students under an intensive training program preparing for the VEX IQ Competition 2024, leading to top 5, top 10, and two top 20 placements out of 120 teams.</li>
-                    <li>Recognized as a top dedicated student mentor by Edison School.</li>
+                    <li data-translate="exp3Desc1">Mentored four teams of 20+ students under an intensive training program preparing for the VEX IQ Competition 2024, leading to top 5, top 10, and two top 20 placements out of 120 teams.</li>
+                    <li data-translate="exp3Desc2">Recognized as a top dedicated student mentor by Edison School.</li>
                 </ul>
             </div>
         </div>
         <div class="exp fade-in">
-            <h2>Sale Associate <span class="period">Jul 2022 – Jun 2023</span></h2>
+            <h2 data-translate="exp4Title">Sale Associate <span class="period">Jul 2022 – Jun 2023</span></h2>
             <div class="exp-desc">
-                <h3>Uniqlo, Australia</h3>
+                <h3 data-translate="exp4Company">Uniqlo, Australia</h3>
                 <ul>
-                    <li>Gained invaluable experience working in a leading global company, enhancing my understanding of professional and corporate environments.</li>
-                    <li>Collaborated with a diverse team, adhering to strict protocols and maintaining the high standards expected by Uniqlo Japan standard.</li>
-                    <li>Developed a strong work ethic and attention to detail, deeply influenced by the Japanese culture of precision and excellence.</li>
-                    <li>Learned and embodied Uniqlo’s exceptional customer service behaviors, which prioritize customer satisfaction and operational efficiency.</li>
+                    <li data-translate="exp4Desc1">Gained invaluable experience working in a leading global company, enhancing my understanding of professional and corporate environments.</li>
+                    <li data-translate="exp4Desc2">Collaborated with a diverse team, adhering to strict protocols and maintaining the high standards expected by Uniqlo Japan standard.</li>
+                    <li data-translate="exp4Desc3">Developed a strong work ethic and attention to detail, deeply influenced by the Japanese culture of precision and excellence.</li>
+                    <li data-translate="exp4Desc4">Learned and embodied Uniqlo’s exceptional customer service behaviors, which prioritize customer satisfaction and operational efficiency.</li>
                 </ul>
             </div>
         </div>
-        <button class="tts-button" data-section="experience">Read Experience Section</button>
+        <button class="tts-button" data-section="experience" data-translate="readExperienceSection">Read Experience Section</button>
     </section>
 
     <section class="contact-me" id="contact-loc">
@@ -344,54 +341,22 @@
         <div class="contact">
             <div class="contact-card">
                 <i class="ri-message-3-line"></i>
-                <p>juneng2108@gmail.com</p>
+                <p data-translate="contactEmail">juneng2108@gmail.com</p>
             </div>
             <div class="contact-card">
                 <i class="ri-phone-line"></i>
-                <p>+84 865 949 604</p>
+                <p data-translate="contactPhone">+84 865 949 604</p>
             </div>
             <div class="contact-card">
                 <i class="ri-map-pin-3-line"></i>
-                <p>Ha Noi, Viet Nam</p>
+                <p data-translate="contactAddress">Ha Noi, Viet Nam</p>
             </div>
         </div>
-        <button class="tts-button" data-section="contact-me">Read Contact Section</button>
+        <button class="tts-button" data-section="contact-me" data-translate="readContactSection">Read Contact Section</button>
     </section>
-
 
     <script src="script.js"></script>
     <script>
-        const apiKey = 'pdct.1.1.20240627T042005Z.3f4d47c370f26660.191f097f8597865abf9beccfa2c3c965b9b935fa';
-        const endpoint = 'https://translate.yandex.net/api/v1.5/tr.json/translate';
-    
-        async function translateText(text, targetLang) {
-            try {
-                const response = await fetch(`${endpoint}?key=${apiKey}&text=${encodeURIComponent(text)}&lang=${targetLang}`, {
-                    method: 'GET'
-                });
-    
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-    
-                const data = await response.json();
-                return data.text[0];
-            } catch (error) {
-                console.error('Error translating text:', error);
-                return text; // Fallback to original text in case of error
-            }
-        }
-    
-        async function translatePage(targetLang) {
-            const elements = document.querySelectorAll("[data-translate]");
-            for (const element of elements) {
-                const originalText = element.getAttribute("data-original-text") || element.innerText;
-                const translatedText = await translateText(originalText, targetLang);
-                element.innerHTML = translatedText;
-                element.setAttribute("data-original-text", originalText); // Store original text for future translations
-            }
-        }
-    
         document.addEventListener('DOMContentLoaded', function() {
             const translateOptions = document.querySelectorAll('.translate-options a');
             translateOptions.forEach(function(option) {
@@ -401,11 +366,578 @@
                     translatePage(lang);
                 });
             });
+
+            const dictionary = {
+                en: {
+                    "about": "About",
+                    "portfolio": "Portfolio",
+                    "contactMe": "Contact Me",
+                    "intro": "I'M <span>Ngoc Dung Nguyen</span><br>FullStack Developer &<br>Robotics Programmer",
+                    "aboutText": "I am currently pursuing a Bachelor of Information Technology with a minor in Enterprise Systems Development at the Royal Melbourne Institute of Technology. My passion lies in programming and web development, where I have honed my skills in various languages and technologies such as Python, JavaScript, and Node.js. Living and studying at Queensland University of Technology in Australia provided me with an invaluable opportunity to immerse myself in a highly international and professional environment, significantly enhancing both my technical competencies and cultural awareness.",
+                    "education": "Education",
+                    "awardsCertifications": "Awards and Certifications",
+                    "awards": "Awards",
+                    "certifications": "Certifications",
+                    "skills": "Skills",
+                    "experience": "Experience",
+                    "contactMe": "Contact Me",
+                    "searchPlaceholder": "search",
+                    "translateButton": "Translate",
+                    "contactMeButton": "Contact Me",
+                    "readAboutSection": "Read About Section",
+                    "rmitTitle": "Royal Melbourne Institute of Technology (RMIT)",
+                    "rmitDegree": "Bachelor of Information Technology",
+                    "rmitMinor": "Minor in Enterprise Systems Development",
+                    "rmitGpa": "Expected May 2026 | Current GPA: 3.6",
+                    "qutTitle": "Queensland University of Technology (QLD, Australia)",
+                    "qutDegree": "Bachelor of Engineering (Mechatronics)",
+                    "qutDuration": "Jul 2022 - Jun 2023",
+                    "readEducationSection": "Read Education Section",
+                    "award1Title": "3rd Prize Robotacon HN",
+                    "award1Desc": "Issued by Sao Nam Education Center, 2017",
+                    "award2Title": "2nd Prize Robotic Programming Talent",
+                    "award2Desc": "Issued by Sao Nam Education Center, 2018",
+                    "award3Title": "1st Prize Robotacon HN",
+                    "award3Desc": "Issued by Sao Nam Education Center, 2018",
+                    "award4Title": "1st Prize International Youth Robot Vietnam 2018",
+                    "award4Desc": "Issued by Vietnam, 2018",
+                    "award5Title": "1st Prize - Science and Technology Competition for High School Students",
+                    "award5Desc": "Issued by Trường THCS Giảng Võ, 2018",
+                    "award6Title": "Excellent Award International Youth Robot Competition",
+                    "award6Desc": "Issued by International Youth Robot Competition, 2019",
+                    "award7Title": "Finalist-MakeX Robotics Competition 2019",
+                    "award7Desc": "Issued by KDI Education, Sở Khoa Học và Công Nghệ TP.HCM, 2019",
+                    "award8Title": "2nd Prize International Youth Robot Competition 2020",
+                    "award8Desc": "Issued by International Youth Robot Competition, 2020",
+                    "award9Title": "Top 10 RMIT Amazing Vietnam Student Competition 2021",
+                    "award9Desc": "Issued by RMIT and Bao Hoa Hoc Tro, 2021",
+                    "award10Title": "Semi-Finalist TechGenius by RMIT",
+                    "award10Desc": "Issued by RMIT 2021",
+                    "seeMore": "See More",
+                    "seeAllAwards": "See All Awards",
+                    "seeLessAwards": "See Less Awards",
+                    "cert1Title": "IT and Mechanical Mentoring VEX IQ Robotics Competition Full Volume 2024",
+                    "cert1Desc": "Issued by STEAM VIETNAM, Vietnam VEX Robotics National Championship, Edison school, 2024",
+                    "cert2Title": "Rookie of the Semester",
+                    "cert2Desc": "Issued by Student Ambassador Team (RMIT Student Recruitment Department), 2024",
+                    "cert3Title": "Participate in IYRC 2017 (Malaysia)",
+                    "cert3Desc": "Issued by International Youth Robot Competition, 2017",
+                    "cert4Title": "Participate in IYRC 2018 (Thailand)",
+                    "cert4Desc": "Issued by International Youth Robot Competition, 2018",
+                    "seeAllCerts": "See All Certifications",
+                    "seeLessCerts": "See Less Certifications",
+                    "readAwardsCertsSection": "Read Awards and Certifications Section",
+                    "html": "HTML",
+                    "css": "CSS",
+                    "javascript": "JavaScript",
+                    "nodejs": "NodeJS",
+                    "mongodb": "MongoDB",
+                    "mysql": "MySQL",
+                    "git": "GIT",
+                    "php": "PHP",
+                    "aws": "AWS",
+                    "python": "Python",
+                    "arduino": "Arduino",
+                    "scratch": "Scratch",
+                    "readSkillsSection": "Read Skills Section",
+                    "project1Title": "HR Management Website",
+                    "project1Desc": "A comprehensive platform for managing employees and company inventory.",
+                    "project2Title": "RMIT Team Finding Website",
+                    "project2Desc": "A website for RMIT students to find and connect with teammates based on GPA and course.",
+                    "project3Title": "Tracking Weather and Population Website",
+                    "project3Desc": "A website for tracking, displaying, and comparing temperature and population data globally.",
+                    "project4Title": "Tour Booking Website",
+                    "project4Desc": "A travel tour booking and review platform.",
+                    "viewMore": "View More",
+                    "readPortfolioSection": "Read Portfolio Section",
+                    "exp1Title": "IT Support Specialist Intern",
+                    "exp1Company": "Thuy Thailand Consumer Goods, Ha Noi",
+                    "exp1Desc1": "Developed a web-based inventory management app and built an e-commerce platform, significantly increasing customer engagement and operational efficiency.",
+                    "exp1Desc2": "Built an e-commerce platform, increasing customer engagement by 10% monthly.",
+                    "exp1Desc3": "Performed regular IT maintenance, improving operational efficiency.",
+                    "exp2Title": "Technical Controller Part-time",
+                    "exp2Company": "Game Master (Genesis Escape), Ha Noi",
+                    "exp2Desc1": "Ensured a 100% gameplay success rate by troubleshooting customer issues and maintaining game devices.",
+                    "exp2Desc2": "Achieved 98% customer satisfaction through efficient tech operation and role-play.",
+                    "exp2Desc3": "Reported technical errors for timely maintenance, collaborating on daily system repairs.",
+                    "exp3Title": "IT and Mechanical Mentor",
+                    "exp3Company": "Edison School, Ha Noi",
+                    "exp3Desc1": "Mentored four teams of 20+ students under an intensive training program preparing for the VEX IQ Competition 2024, leading to top 5, top 10, and two top 20 placements out of 120 teams.",
+                    "exp3Desc2": "Recognized as a top dedicated student mentor by Edison School.",
+                    "exp4Title": "Sale Associate",
+                    "exp4Company": "Uniqlo, Australia",
+                    "exp4Desc1": "Gained invaluable experience working in a leading global company, enhancing my understanding of professional and corporate environments.",
+                    "exp4Desc2": "Collaborated with a diverse team, adhering to strict protocols and maintaining the high standards expected by Uniqlo Japan standard.",
+                    "exp4Desc3": "Developed a strong work ethic and attention to detail, deeply influenced by the Japanese culture of precision and excellence.",
+                    "exp4Desc4": "Learned and embodied Uniqlo’s exceptional customer service behaviors, which prioritize customer satisfaction and operational efficiency.",
+                    "readExperienceSection": "Read Experience Section",
+                    "contactEmail": "juneng2108@gmail.com",
+                    "contactPhone": "+84 865 949 604",
+                    "contactAddress": "Ha Noi, Viet Nam",
+                    "readContactSection": "Read Contact Section"
+                },
+                vi: {
+                    "about": "Giới thiệu",
+                    "portfolio": "Danh mục đầu tư",
+                    "contactMe": "Liên hệ",
+                    "intro": "TÔI LÀ <span>Ngoc Dung Nguyen</span><br>Nhà phát triển FullStack &<br>Lập trình viên Robotics",
+                    "aboutText": "Tôi hiện đang theo học Cử nhân Công nghệ Thông tin với chuyên ngành Hệ thống Doanh nghiệp tại Viện Công nghệ Hoàng gia Melbourne. Niềm đam mê của tôi là lập trình và phát triển web, nơi tôi đã rèn luyện kỹ năng của mình trong các ngôn ngữ và công nghệ khác nhau như Python, JavaScript và Node.js. Sống và học tập tại Đại học Công nghệ Queensland ở Úc đã mang lại cho tôi cơ hội vô giá để hòa mình vào môi trường quốc tế và chuyên nghiệp, nâng cao đáng kể cả năng lực kỹ thuật và nhận thức văn hóa của tôi.",
+                    "education": "Giáo dục",
+                    "awardsCertifications": "Giải thưởng và Chứng chỉ",
+                    "awards": "Giải thưởng",
+                    "certifications": "Chứng chỉ",
+                    "skills": "Kỹ năng",
+                    "experience": "Kinh nghiệm",
+                    "contactMe": "Liên hệ",
+                    "searchPlaceholder": "tìm kiếm",
+                    "translateButton": "Dịch",
+                    "contactMeButton": "Liên hệ",
+                    "readAboutSection": "Đọc phần Giới thiệu",
+                    "rmitTitle": "Viện Công nghệ Hoàng gia Melbourne (RMIT)",
+                    "rmitDegree": "Cử nhân Công nghệ Thông tin",
+                    "rmitMinor": "Chuyên ngành Hệ thống Doanh nghiệp",
+                    "rmitGpa": "Dự kiến tháng 5 năm 2026 | GPA hiện tại: 3.6",
+                    "qutTitle": "Đại học Công nghệ Queensland (QLD, Úc)",
+                    "qutDegree": "Cử nhân Kỹ thuật (Cơ điện tử)",
+                    "qutDuration": "Tháng 7 năm 2022 - Tháng 6 năm 2023",
+                    "readEducationSection": "Đọc phần Giáo dục",
+                    "award1Title": "Giải Ba Robotacon HN",
+                    "award1Desc": "Được cấp bởi Trung tâm Giáo dục Sao Nam, 2017",
+                    "award2Title": "Giải Nhì Tài năng Lập trình Robot",
+                    "award2Desc": "Được cấp bởi Trung tâm Giáo dục Sao Nam, 2018",
+                    "award3Title": "Giải Nhất Robotacon HN",
+                    "award3Desc": "Được cấp bởi Trung tâm Giáo dục Sao Nam, 2018",
+                    "award4Title": "Giải Nhất Robot Trẻ Quốc tế Việt Nam 2018",
+                    "award4Desc": "Được cấp bởi Việt Nam, 2018",
+                    "award5Title": "Giải Nhất - Cuộc thi Khoa học và Công nghệ cho Học sinh Trung học",
+                    "award5Desc": "Được cấp bởi Trường THCS Giảng Võ, 2018",
+                    "award6Title": "Giải Xuất sắc Cuộc thi Robot Trẻ Quốc tế",
+                    "award6Desc": "Được cấp bởi Cuộc thi Robot Trẻ Quốc tế, 2019",
+                    "award7Title": "Chung kết Cuộc thi Robot MakeX 2019",
+                    "award7Desc": "Được cấp bởi KDI Education, Sở Khoa học và Công nghệ TP.HCM, 2019",
+                    "award8Title": "Giải Nhì Cuộc thi Robot Trẻ Quốc tế 2020",
+                    "award8Desc": "Được cấp bởi Cuộc thi Robot Trẻ Quốc tế, 2020",
+                    "award9Title": "Top 10 Cuộc thi Sinh viên Việt Nam Tuyệt vời RMIT 2021",
+                    "award9Desc": "Được cấp bởi RMIT và Báo Hoa Học Trò, 2021",
+                    "award10Title": "Bán kết Cuộc thi TechGenius của RMIT",
+                    "award10Desc": "Được cấp bởi RMIT 2021",
+                    "seeMore": "Xem thêm",
+                    "seeAllAwards": "Xem tất cả Giải thưởng",
+                    "seeLessAwards": "Xem ít Giải thưởng",
+                    "cert1Title": "Hướng dẫn IT và Cơ khí Cuộc thi Robot VEX IQ 2024",
+                    "cert1Desc": "Được cấp bởi STEAM VIETNAM, Giải vô địch Robot Quốc gia VEX Việt Nam, Trường Edison, 2024",
+                    "cert2Title": "Tân binh của Học kỳ",
+                    "cert2Desc": "Được cấp bởi Đội Đại sứ Sinh viên (Phòng Tuyển sinh Sinh viên RMIT), 2024",
+                    "cert3Title": "Tham gia IYRC 2017 (Malaysia)",
+                    "cert3Desc": "Được cấp bởi Cuộc thi Robot Trẻ Quốc tế, 2017",
+                    "cert4Title": "Tham gia IYRC 2018 (Thái Lan)",
+                    "cert4Desc": "Được cấp bởi Cuộc thi Robot Trẻ Quốc tế, 2018",
+                    "seeAllCerts": "Xem tất cả Chứng chỉ",
+                    "seeLessCerts": "Xem ít Chứng chỉ",
+                    "readAwardsCertsSection": "Đọc phần Giải thưởng và Chứng chỉ",
+                    "html": "HTML",
+                    "css": "CSS",
+                    "javascript": "JavaScript",
+                    "nodejs": "NodeJS",
+                    "mongodb": "MongoDB",
+                    "mysql": "MySQL",
+                    "git": "GIT",
+                    "php": "PHP",
+                    "aws": "AWS",
+                    "python": "Python",
+                    "arduino": "Arduino",
+                    "scratch": "Scratch",
+                    "readSkillsSection": "Đọc phần Kỹ năng",
+                    "project1Title": "Trang web Quản lý Nhân sự",
+                    "project1Desc": "Một nền tảng toàn diện để quản lý nhân viên và hàng tồn kho của công ty.",
+                    "project2Title": "Trang web Tìm kiếm Đội nhóm RMIT",
+                    "project2Desc": "Một trang web dành cho sinh viên RMIT để tìm và kết nối với đồng đội dựa trên GPA và khóa học.",
+                    "project3Title": "Trang web Theo dõi Thời tiết và Dân số",
+                    "project3Desc": "Một trang web để theo dõi, hiển thị và so sánh dữ liệu nhiệt độ và dân số toàn cầu.",
+                    "project4Title": "Trang web Đặt tour Du lịch",
+                    "project4Desc": "Một nền tảng đặt tour du lịch và đánh giá.",
+                    "viewMore": "Xem thêm",
+                    "readPortfolioSection": "Đọc phần Dự án",
+                    "exp1Title": "Thực tập sinh Hỗ trợ IT",
+                    "exp1Company": "Thuy Thailand Consumer Goods, Hà Nội",
+                    "exp1Desc1": "Phát triển ứng dụng quản lý hàng tồn kho dựa trên web và xây dựng nền tảng thương mại điện tử, tăng cường đáng kể sự tương tác của khách hàng và hiệu quả hoạt động.",
+                    "exp1Desc2": "Xây dựng nền tảng thương mại điện tử, tăng cường sự tương tác của khách hàng lên 10% hàng tháng.",
+                    "exp1Desc3": "Thực hiện bảo trì IT thường xuyên, cải thiện hiệu quả hoạt động.",
+                    "exp2Title": "Nhân viên Điều khiển Kỹ thuật Bán thời gian",
+                    "exp2Company": "Game Master (Genesis Escape), Hà Nội",
+                    "exp2Desc1": "Đảm bảo tỷ lệ thành công 100% trong trò chơi bằng cách khắc phục sự cố của khách hàng và bảo trì thiết bị trò chơi.",
+                    "exp2Desc2": "Đạt được 98% sự hài lòng của khách hàng thông qua vận hành kỹ thuật hiệu quả và đóng vai trò.",
+                    "exp2Desc3": "Báo cáo lỗi kỹ thuật để bảo trì kịp thời, hợp tác trong việc sửa chữa hệ thống hàng ngày.",
+                    "exp3Title": "Hướng dẫn IT và Cơ khí",
+                    "exp3Company": "Trường Edison, Hà Nội",
+                    "exp3Desc1": "Hướng dẫn bốn đội gồm hơn 20 học sinh trong chương trình đào tạo chuyên sâu chuẩn bị cho Cuộc thi VEX IQ 2024, đạt được vị trí top 5, top 10 và hai vị trí top 20 trong số 120 đội thi.",
+                    "exp3Desc2": "Được công nhận là người hướng dẫn học sinh tận tâm hàng đầu bởi Trường Edison.",
+                    "exp4Title": "Nhân viên Bán hàng",
+                    "exp4Company": "Uniqlo, Úc",
+                    "exp4Desc1": "Có được kinh nghiệm quý báu khi làm việc tại một công ty hàng đầu toàn cầu, nâng cao hiểu biết về môi trường chuyên nghiệp và doanh nghiệp.",
+                    "exp4Desc2": "Hợp tác với một đội ngũ đa dạng, tuân thủ các quy trình nghiêm ngặt và duy trì các tiêu chuẩn cao do Uniqlo Nhật Bản đặt ra.",
+                    "exp4Desc3": "Phát triển đạo đức làm việc mạnh mẽ và chú ý đến chi tiết, bị ảnh hưởng sâu sắc bởi văn hóa chính xác và xuất sắc của Nhật Bản.",
+                    "exp4Desc4": "Học hỏi và thể hiện các hành vi dịch vụ khách hàng xuất sắc của Uniqlo, ưu tiên sự hài lòng của khách hàng và hiệu quả hoạt động.",
+                    "readExperienceSection": "Đọc phần Kinh nghiệm",
+                    "contactEmail": "juneng2108@gmail.com",
+                    "contactPhone": "+84 865 949 604",
+                    "contactAddress": "Hà Nội, Việt Nam",
+                    "readContactSection": "Đọc phần Liên hệ"
+                },
+                "zh-CN": {
+                    "about": "关于",
+                    "portfolio": "作品集",
+                    "contactMe": "联系我",
+                    "intro": "我是 <span>Ngoc Dung Nguyen</span><br>全栈开发者 &<br>机器人程序员",
+                    "aboutText": "我目前正在皇家墨尔本理工学院攻读信息技术学士学位，辅修企业系统开发。我对编程和网页开发充满热情，并在Python、JavaScript和Node.js等各种语言和技术中磨练了我的技能。在澳大利亚昆士兰科技大学生活和学习为我提供了一个宝贵的机会，让我沉浸在一个高度国际化和专业的环境中，极大地提高了我的技术能力和文化意识。",
+                    "education": "教育",
+                    "awardsCertifications": "奖项和认证",
+                    "awards": "奖项",
+                    "certifications": "认证",
+                    "skills": "技能",
+                    "experience": "经验",
+                    "contactMe": "联系我",
+                    "searchPlaceholder": "搜索",
+                    "translateButton": "翻译",
+                    "contactMeButton": "联系我",
+                    "readAboutSection": "阅读关于部分",
+                    "rmitTitle": "皇家墨尔本理工学院 (RMIT)",
+                    "rmitDegree": "信息技术学士",
+                    "rmitMinor": "企业系统开发辅修",
+                    "rmitGpa": "预计2026年5月 | 当前GPA: 3.6",
+                    "qutTitle": "昆士兰科技大学 (QLD, 澳大利亚)",
+                    "qutDegree": "工程学士 (机电一体化)",
+                    "qutDuration": "2022年7月 - 2023年6月",
+                    "readEducationSection": "阅读教育部分",
+                    "award1Title": "第三名 Robotacon HN",
+                    "award1Desc": "由Sao Nam教育中心颁发，2017年",
+                    "award2Title": "第二名 机器人编程人才",
+                    "award2Desc": "由Sao Nam教育中心颁发，2018年",
+                    "award3Title": "第一名 Robotacon HN",
+                    "award3Desc": "由Sao Nam教育中心颁发，2018年",
+                    "award4Title": "第一名 国际青年机器人越南2018",
+                    "award4Desc": "由越南颁发，2018年",
+                    "award5Title": "第一名 - 高中生科学技术竞赛",
+                    "award5Desc": "由Giảng Võ中学颁发，2018年",
+                    "award6Title": "优秀奖 国际青年机器人竞赛",
+                    "award6Desc": "由国际青年机器人竞赛颁发，2019年",
+                    "award7Title": "决赛选手 MakeX机器人竞赛2019",
+                    "award7Desc": "由KDI教育，胡志明市科学技术局颁发，2019年",
+                    "award8Title": "第二名 国际青年机器人竞赛2020",
+                    "award8Desc": "由国际青年机器人竞赛颁发，2020年",
+                    "award9Title": "前10名 RMIT惊艳越南学生竞赛2021",
+                    "award9Desc": "由RMIT和Hoa Hoc Tro报纸颁发，2021年",
+                    "award10Title": "半决赛选手 RMIT TechGenius",
+                    "award10Desc": "由RMIT颁发，2021年",
+                    "seeMore": "查看更多",
+                    "seeAllAwards": "查看所有奖项",
+                    "seeLessAwards": "查看较少奖项",
+                    "cert1Title": "IT和机械指导 VEX IQ机器人竞赛2024",
+                    "cert1Desc": "由STEAM VIETNAM，越南VEX机器人全国锦标赛，Edison学校颁发，2024年",
+                    "cert2Title": "学期新秀",
+                    "cert2Desc": "由学生大使团队 (RMIT学生招生部) 颁发，2024年",
+                    "cert3Title": "参加IYRC 2017 (马来西亚)",
+                    "cert3Desc": "由国际青年机器人竞赛颁发，2017年",
+                    "cert4Title": "参加IYRC 2018 (泰国)",
+                    "cert4Desc": "由国际青年机器人竞赛颁发，2018年",
+                    "seeAllCerts": "查看所有认证",
+                    "seeLessCerts": "查看较少认证",
+                    "readAwardsCertsSection": "阅读奖项和认证部分",
+                    "html": "HTML",
+                    "css": "CSS",
+                    "javascript": "JavaScript",
+                    "nodejs": "NodeJS",
+                    "mongodb": "MongoDB",
+                    "mysql": "MySQL",
+                    "git": "GIT",
+                    "php": "PHP",
+                    "aws": "AWS",
+                    "python": "Python",
+                    "arduino": "Arduino",
+                    "scratch": "Scratch",
+                    "readSkillsSection": "阅读技能部分",
+                    "project1Title": "人力资源管理网站",
+                    "project1Desc": "一个全面的平台，用于管理员工和公司库存。",
+                    "project2Title": "RMIT团队寻找网站",
+                    "project2Desc": "一个网站，供RMIT学生根据GPA和课程找到并与队友联系。",
+                    "project3Title": "天气和人口跟踪网站",
+                    "project3Desc": "一个网站，用于跟踪、显示和比较全球温度和人口数据。",
+                    "project4Title": "旅游预订网站",
+                    "project4Desc": "一个旅游预订和评论平台。",
+                    "viewMore": "查看更多",
+                    "readPortfolioSection": "阅读项目部分",
+                    "exp1Title": "IT支持专家实习生",
+                    "exp1Company": "Thuy Thailand Consumer Goods, 河内",
+                    "exp1Desc1": "开发基于Web的库存管理应用程序并构建电子商务平台，显著提高客户参与度和运营效率。",
+                    "exp1Desc2": "构建电子商务平台，每月增加10%的客户参与度。",
+                    "exp1Desc3": "定期进行IT维护，提高运营效率。",
+                    "exp2Title": "兼职技术控制员",
+                    "exp2Company": "游戏大师 (Genesis Escape), 河内",
+                    "exp2Desc1": "通过解决客户问题和维护游戏设备，确保100%的游戏成功率。",
+                    "exp2Desc2": "通过高效的技术操作和角色扮演，实现98%的客户满意度。",
+                    "exp2Desc3": "报告技术错误以便及时维护，协作进行日常系统维修。",
+                    "exp3Title": "IT和机械导师",
+                    "exp3Company": "Edison学校, 河内",
+                    "exp3Desc1": "在准备VEX IQ竞赛2024的密集培训计划中指导四个团队的20多名学生，取得了前5名、前10名和两个前20名的成绩。",
+                    "exp3Desc2": "被Edison学校认可为最敬业的学生导师。",
+                    "exp4Title": "销售助理",
+                    "exp4Company": "优衣库, 澳大利亚",
+                    "exp4Desc1": "在一家领先的全球公司工作，获得了宝贵的经验，增强了我对专业和企业环境的理解。",
+                    "exp4Desc2": "与多元化团队合作，遵守严格的协议，并保持优衣库日本标准的高标准。",
+                    "exp4Desc3": "在日本文化的精确和卓越影响下，培养了强烈的职业道德和对细节的关注。",
+                    "exp4Desc4": "学习并体现了优衣库卓越的客户服务行为，优先考虑客户满意度和运营效率。",
+                    "readExperienceSection": "阅读经验部分",
+                    "contactEmail": "juneng2108@gmail.com",
+                    "contactPhone": "+84 865 949 604",
+                    "contactAddress": "河内, 越南",
+                    "readContactSection": "阅读联系部分"
+                },
+
+                ko: {
+                    "about": "소개",
+                    "portfolio": "포트폴리오",
+                    "contactMe": "연락처",
+                    "intro": "저는 <span>Ngoc Dung Nguyen</span><br>풀스택 개발자 &<br>로봇 프로그래머입니다",
+                    "aboutText": "저는 현재 Royal Melbourne Institute of Technology에서 정보 기술 학사 학위를 취득하고 있으며, 엔터프라이즈 시스템 개발을 부전공으로 하고 있습니다. 저는 프로그래밍과 웹 개발에 열정을 가지고 있으며, Python, JavaScript 및 Node.js와 같은 다양한 언어와 기술에서 제 기술을 연마했습니다. 호주 Queensland University of Technology에서 생활하고 공부하면서 매우 국제적이고 전문적인 환경에 몰입할 수 있는 귀중한 기회를 얻었으며, 이를 통해 제 기술 역량과 문화적 인식을 크게 향상시킬 수 있었습니다.",
+                    "education": "교육",
+                    "awardsCertifications": "수상 및 인증",
+                    "awards": "수상",
+                    "certifications": "인증",
+                    "skills": "기술",
+                    "experience": "경험",
+                    "contactMe": "연락처",
+                    "searchPlaceholder": "검색",
+                    "translateButton": "번역",
+                    "contactMeButton": "연락처",
+                    "readAboutSection": "소개 섹션 읽기",
+                    "rmitTitle": "로열 멜버른 공과대학교 (RMIT)",
+                    "rmitDegree": "정보 기술 학사",
+                    "rmitMinor": "엔터프라이즈 시스템 개발 부전공",
+                    "rmitGpa": "2026년 5월 예상 | 현재 GPA: 3.6",
+                    "qutTitle": "퀸즐랜드 공과대학교 (QLD, 호주)",
+                    "qutDegree": "공학 학사 (메카트로닉스)",
+                    "qutDuration": "2022년 7월 - 2023년 6월",
+                    "readEducationSection": "교육 섹션 읽기",
+                    "award1Title": "3등 Robotacon HN",
+                    "award1Desc": "Sao Nam 교육 센터에서 발급, 2017년",
+                    "award2Title": "2등 로봇 프로그래밍 재능",
+                    "award2Desc": "Sao Nam 교육 센터에서 발급, 2018년",
+                    "award3Title": "1등 Robotacon HN",
+                    "award3Desc": "Sao Nam 교육 센터에서 발급, 2018년",
+                    "award4Title": "1등 국제 청소년 로봇 베트남 2018",
+                    "award4Desc": "베트남에서 발급, 2018년",
+                    "award5Title": "1등 - 고등학생 과학 및 기술 대회",
+                    "award5Desc": "Giảng Võ 중학교에서 발급, 2018년",
+                    "award6Title": "우수상 국제 청소년 로봇 대회",
+                    "award6Desc": "국제 청소년 로봇 대회에서 발급, 2019년",
+                    "award7Title": "결승전 MakeX 로봇 대회 2019",
+                    "award7Desc": "KDI 교육, 호치민시 과학기술국에서 발급, 2019년",
+                    "award8Title": "2등 국제 청소년 로봇 대회 2020",
+                    "award8Desc": "국제 청소년 로봇 대회에서 발급, 2020년",
+                    "award9Title": "Top 10 RMIT Amazing Vietnam Student Competition 2021",
+                    "award9Desc": "RMIT 및 Hoa Hoc Tro 신문에서 발급, 2021년",
+                    "award10Title": "준결승전 TechGenius by RMIT",
+                    "award10Desc": "RMIT에서 발급, 2021년",
+                    "seeMore": "더보기",
+                    "seeAllAwards": "모든 수상 보기",
+                    "seeLessAwards": "수상 적게 보기",
+                    "cert1Title": "IT 및 기계 멘토링 VEX IQ 로봇 대회 2024",
+                    "cert1Desc": "STEAM VIETNAM, 베트남 VEX 로봇 전국 대회, Edison 학교에서 발급, 2024년",
+                    "cert2Title": "학기 신입생",
+                    "cert2Desc": "학생 대사 팀 (RMIT 학생 모집 부서)에서 발급, 2024년",
+                    "cert3Title": "IYRC 2017 (말레이시아) 참가",
+                    "cert3Desc": "국제 청소년 로봇 대회에서 발급, 2017년",
+                    "cert4Title": "IYRC 2018 (태국) 참가",
+                    "cert4Desc": "국제 청소년 로봇 대회에서 발급, 2018년",
+                    "seeAllCerts": "모든 인증 보기",
+                    "seeLessCerts": "인증 적게 보기",
+                    "readAwardsCertsSection": "수상 및 인증 섹션 읽기",
+                    "html": "HTML",
+                    "css": "CSS",
+                    "javascript": "JavaScript",
+                    "nodejs": "NodeJS",
+                    "mongodb": "MongoDB",
+                    "mysql": "MySQL",
+                    "git": "GIT",
+                    "php": "PHP",
+                    "aws": "AWS",
+                    "python": "Python",
+                    "arduino": "Arduino",
+                    "scratch": "Scratch",
+                    "readSkillsSection": "기술 섹션 읽기",
+                    "project1Title": "HR 관리 웹사이트",
+                    "project1Desc": "직원 및 회사 재고를 관리하기 위한 종합 플랫폼.",
+                    "project2Title": "RMIT 팀 찾기 웹사이트",
+                    "project2Desc": "RMIT 학생들이 GPA 및 과정을 기반으로 팀원을 찾고 연결할 수 있는 웹사이트.",
+                    "project3Title": "날씨 및 인구 추적 웹사이트",
+                    "project3Desc": "전 세계 온도 및 인구 데이터를 추적, 표시 및 비교하기 위한 웹사이트.",
+                    "project4Title": "투어 예약 웹사이트",
+                    "project4Desc": "여행 투어 예약 및 리뷰 플랫폼.",
+                    "viewMore": "더보기",
+                    "readPortfolioSection": "프로젝트 섹션 읽기",
+                    "exp1Title": "IT 지원 전문가 인턴",
+                    "exp1Company": "Thuy Thailand Consumer Goods, 하노이",
+                    "exp1Desc1": "웹 기반 재고 관리 앱을 개발하고 전자 상거래 플랫폼을 구축하여 고객 참여도와 운영 효율성을 크게 향상시켰습니다.",
+                    "exp1Desc2": "전자 상거래 플랫폼을 구축하여 매월 고객 참여도를 10% 증가시켰습니다.",
+                    "exp1Desc3": "정기적인 IT 유지 보수를 수행하여 운영 효율성을 향상시켰습니다.",
+                    "exp2Title": "파트타임 기술 컨트롤러",
+                    "exp2Company": "게임 마스터 (Genesis Escape), 하노이",
+                    "exp2Desc1": "고객 문제를 해결하고 게임 장치를 유지 관리하여 100% 게임 성공률을 보장했습니다.",
+                    "exp2Desc2": "효율적인 기술 운영과 역할 수행을 통해 98%의 고객 만족도를 달성했습니다.",
+                    "exp2Desc3": "시기 적절한 유지 보수를 위해 기술 오류를 보고하고 일일 시스템 수리에 협력했습니다.",
+                    "exp3Title": "IT 및 기계 멘토",
+                    "exp3Company": "Edison 학교, 하노이",
+                    "exp3Desc1": "VEX IQ 대회 2024를 준비하기 위한 집중 훈련 프로그램에서 20명 이상의 학생으로 구성된 4개 팀을 멘토링하여 120개 팀 중 상위 5위, 상위 10위 및 상위 20위에 두 팀을 배치했습니다.",
+                    "exp3Desc2": "Edison 학교에서 가장 헌신적인 학생 멘토로 인정받았습니다.",
+                    "exp4Title": "판매 직원",
+                    "exp4Company": "유니클로, 호주",
+                    "exp4Desc1": "선도적인 글로벌 회사에서 일하면서 귀중한 경험을 쌓고 전문적이고 기업 환경에 대한 이해를 높였습니다.",
+                    "exp4Desc2": "다양한 팀과 협력하여 엄격한 프로토콜을 준수하고 유니클로 일본 표준의 높은 기준을 유지했습니다.",
+                    "exp4Desc3": "일본 문화의 정밀성과 탁월성에 깊은 영향을 받아 강한 직업 윤리와 세부 사항에 대한 주의를 개발했습니다.",
+                    "exp4Desc4": "고객 만족도와 운영 효율성을 우선시하는 유니클로의 뛰어난 고객 서비스 행동을 배우고 구현했습니다.",
+                    "readExperienceSection": "경험 섹션 읽기",
+                    "contactEmail": "juneng2108@gmail.com",
+                    "contactPhone": "+84 865 949 604",
+                    "contactAddress": "하노이, 베트남",
+                    "readContactSection": "연락처 섹션 읽기"
+                },
+                "zh-CN": {
+                    "about": "关于",
+                    "portfolio": "作品集",
+                    "contactMe": "联系我",
+                    "intro": "我是 <span>Ngoc Dung Nguyen</span><br>全栈开发者 &<br>机器人程序员",
+                    "aboutText": "我目前正在皇家墨尔本理工学院攻读信息技术学士学位，辅修企业系统开发。我对编程和网页开发充满热情，并在Python、JavaScript和Node.js等各种语言和技术中磨练了我的技能。在澳大利亚昆士兰科技大学生活和学习为我提供了一个宝贵的机会，让我沉浸在一个高度国际化和专业的环境中，极大地提高了我的技术能力和文化意识。",
+                    "education": "教育",
+                    "awardsCertifications": "奖项和认证",
+                    "awards": "奖项",
+                    "certifications": "认证",
+                    "skills": "技能",
+                    "experience": "经验",
+                    "contactMe": "联系我",
+                    "searchPlaceholder": "搜索",
+                    "translateButton": "翻译",
+                    "contactMeButton": "联系我",
+                    "readAboutSection": "阅读关于部分",
+                    "rmitTitle": "皇家墨尔本理工学院 (RMIT)",
+                    "rmitDegree": "信息技术学士",
+                    "rmitMinor": "企业系统开发辅修",
+                    "rmitGpa": "预计2026年5月 | 当前GPA: 3.6",
+                    "qutTitle": "昆士兰科技大学 (QLD, 澳大利亚)",
+                    "qutDegree": "工程学士 (机电一体化)",
+                    "qutDuration": "2022年7月 - 2023年6月",
+                    "readEducationSection": "阅读教育部分",
+                    "award1Title": "第三名 Robotacon HN",
+                    "award1Desc": "由Sao Nam教育中心颁发，2017年",
+                    "award2Title": "第二名 机器人编程人才",
+                    "award2Desc": "由Sao Nam教育中心颁发，2018年",
+                    "award3Title": "第一名 Robotacon HN",
+                    "award3Desc": "由Sao Nam教育中心颁发，2018年",
+                    "award4Title": "第一名 国际青年机器人越南2018",
+                    "award4Desc": "由越南颁发，2018年",
+                    "award5Title": "第一名 - 高中生科学技术竞赛",
+                    "award5Desc": "由Giảng Võ中学颁发，2018年",
+                    "award6Title": "优秀奖 国际青年机器人竞赛",
+                    "award6Desc": "由国际青年机器人竞赛颁发，2019年",
+                    "award7Title": "决赛选手 MakeX机器人竞赛2019",
+                    "award7Desc": "由KDI教育，胡志明市科学技术局颁发，2019年",
+                    "award8Title": "第二名 国际青年机器人竞赛2020",
+                    "award8Desc": "由国际青年机器人竞赛颁发，2020年",
+                    "award9Title": "前10名 RMIT惊艳越南学生竞赛2021",
+                    "award9Desc": "由RMIT和Hoa Hoc Tro报纸颁发，2021年",
+                    "award10Title": "半决赛选手 RMIT TechGenius",
+                    "award10Desc": "由RMIT颁发，2021年",
+                    "seeMore": "查看更多",
+                    "seeAllAwards": "查看所有奖项",
+                    "seeLessAwards": "查看较少奖项",
+                    "cert1Title": "IT和机械指导 VEX IQ机器人竞赛2024",
+                    "cert1Desc": "由STEAM VIETNAM，越南VEX机器人全国锦标赛，Edison学校颁发，2024年",
+                    "cert2Title": "学期新秀",
+                    "cert2Desc": "由学生大使团队 (RMIT学生招生部) 颁发，2024年",
+                    "cert3Title": "参加IYRC 2017 (马来西亚)",
+                    "cert3Desc": "由国际青年机器人竞赛颁发，2017年",
+                    "cert4Title": "参加IYRC 2018 (泰国)",
+                    "cert4Desc": "由国际青年机器人竞赛颁发，2018年",
+                    "seeAllCerts": "查看所有认证",
+                    "seeLessCerts": "查看较少认证",
+                    "readAwardsCertsSection": "阅读奖项和认证部分",
+                    "html": "HTML",
+                    "css": "CSS",
+                    "javascript": "JavaScript",
+                    "nodejs": "NodeJS",
+                    "mongodb": "MongoDB",
+                    "mysql": "MySQL",
+                    "git": "GIT",
+                    "php": "PHP",
+                    "aws": "AWS",
+                    "python": "Python",
+                    "arduino": "Arduino",
+                    "scratch": "Scratch",
+                    "readSkillsSection": "阅读技能部分",
+                    "project1Title": "人力资源管理网站",
+                    "project1Desc": "一个全面的平台，用于管理员工和公司库存。",
+                    "project2Title": "RMIT团队寻找网站",
+                    "project2Desc": "一个网站，供RMIT学生根据GPA和课程找到并与队友联系。",
+                    "project3Title": "天气和人口跟踪网站",
+                    "project3Desc": "一个网站，用于跟踪、显示和比较全球温度和人口数据。",
+                    "project4Title": "旅游预订网站",
+                    "project4Desc": "一个旅游预订和评论平台。",
+                    "viewMore": "查看更多",
+                    "readPortfolioSection": "阅读项目部分",
+                    "exp1Title": "IT支持专家实习生",
+                    "exp1Company": "Thuy Thailand Consumer Goods, 河内",
+                    "exp1Desc1": "开发基于Web的库存管理应用程序并构建电子商务平台，显著提高客户参与度和运营效率。",
+                    "exp1Desc2": "构建电子商务平台，每月增加10%的客户参与度。",
+                    "exp1Desc3": "定期进行IT维护，提高运营效率。",
+                    "exp2Title": "兼职技术控制员",
+                    "exp2Company": "游戏大师 (Genesis Escape), 河内",
+                    "exp2Desc1": "通过解决客户问题和维护游戏设备，确保100%的游戏成功率。",
+                    "exp2Desc2": "通过高效的技术操作和角色扮演，实现98%的客户满意度。",
+                    "exp2Desc3": "报告技术错误以便及时维护，协作进行日常系统维修。",
+                    "exp3Title": "IT和机械导师",
+                    "exp3Company": "Edison学校, 河内",
+                    "exp3Desc1": "在准备VEX IQ竞赛2024的密集培训计划中指导四个团队的20多名学生，取得了前5名、前10名和两个前20名的成绩。",
+                    "exp3Desc2": "被Edison学校认可为最敬业的学生导师。",
+                    "exp4Title": "销售助理",
+                    "exp4Company": "优衣库, 澳大利亚",
+                    "exp4Desc1": "在一家领先的全球公司工作，获得了宝贵的经验，增强了我对专业和企业环境的理解。",
+                    "exp4Desc2": "与多元化团队合作，遵守严格的协议，并保持优衣库日本标准的高标准。",
+                    "exp4Desc3": "在日本文化的精确和卓越影响下，培养了强烈的职业道德和对细节的关注。",
+                    "exp4Desc4": "学习并体现了优衣库卓越的客户服务行为，优先考虑客户满意度和运营效率。",
+                    "readExperienceSection": "阅读经验部分",
+                    "contactEmail": "juneng2108@gmail.com",
+                    "contactPhone": "+84 865 949 604",
+                    "contactAddress": "河内, 越南",
+                    "readContactSection": "阅读联系部分"
+                }
+                // Add more languages here
+            };
+
+            function translateText(text, targetLang) {
+                // Simple dictionary-based translation
+                const words = text.split(' ');
+                return words.map(word => dictionary[targetLang][word.toLowerCase()] || word).join(' ');
+            }
+
+            function updateContent(lang) {
+                document.querySelectorAll("[data-translate]").forEach(function(element) {
+                    const originalText = element.getAttribute("data-original-text") || element.innerText;
+                    const translatedText = translateText(originalText, lang);
+                    element.innerHTML = translatedText;
+                    element.setAttribute("data-original-text", originalText); // Store original text for future translations
+                });
+            }
+
+            function translatePage(lang) {
+                updateContent(lang);
+            }
+
+            // Initialize with default language
+            updateContent('en');
         });
-    
+
         document.addEventListener("DOMContentLoaded", function () {
             const ttsButtons = document.querySelectorAll('.tts-button');
-    
+
             ttsButtons.forEach(button => {
                 button.addEventListener('click', function () {
                     const sectionId = this.getAttribute('data-section');
@@ -414,7 +946,7 @@
                     readText(sectionContent, lang);
                 });
             });
-    
+
             function readText(text, lang) {
                 if ('speechSynthesis' in window) {
                     const utterance = new SpeechSynthesisUtterance(text);
