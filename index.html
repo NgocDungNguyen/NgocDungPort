@@ -9,17 +9,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,vi,ko,zh-CN,ja',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 
 <body>
@@ -41,10 +30,23 @@
                     <input type="text" placeholder="search">
                     <i class="ri-search-line"></i>
                 </div>
-                <div class="translate-container" id="google_translate_element"></div>
-                <button id="translate-button" class="translate-button">Translate</button>
+                <!-- Language selector button -->
+                <div class="translate-container">
+                    <button class="translate-btn" onclick="toggleTranslateOptions()">Translate</button>
+                    <div id="translate-options" class="translate-options">
+                        <a href="#" onclick="translatePage('en')">English</a>
+                        <a href="#" onclick="translatePage('vi')">Vietnamese</a>
+                        <a href="#" onclick="translatePage('ko')">Korean</a>
+                        <a href="#" onclick="translatePage('zh-CN')">Chinese</a>
+                        <a href="#" onclick="translatePage('ja')">Japanese</a>
+                    </div>
+                </div>
             </div>
         </nav>
+
+                <!-- Include Google Translate -->
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                <div id="google_translate_element" style="display:none;"></div>
         
         <div class="landing">
             <div class="intro">
@@ -354,50 +356,5 @@
     </section>
 
     <script src="script.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const googleTranslateElement = document.getElementById("google_translate_element");
-            const translateButton = document.getElementById("translate-button");
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger');
-        
-            function googleTranslateElementInit() {
-                new google.translate.TranslateElement({
-                    pageLanguage: 'en',
-                    includedLanguages: 'en,vi,ko,zh-CN,ja', // Add desired languages here
-                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-                }, 'google_translate_element');
-            }
-        
-            translateButton.addEventListener('click', function () {
-                const selectElement = googleTranslateElement.querySelector('select');
-                if (selectElement) {
-                    selectElement.style.display = 'block';
-                  
-                    selectElement.focus();
-                }
-            });
-
-            hamburger.addEventListener('click', function () {
-                if (window.innerWidth <= 768) {
-                    if (navLinks.classList.contains('expanded')) {
-                        googleTranslateElement.style.position = 'static';
-                        navLinks.appendChild(googleTranslateElement);
-                    } else {
-                        document.body.appendChild(googleTranslateElement);
-                        googleTranslateElement.style.position = 'fixed';
-                        googleTranslateElement.style.top = '20px';
-                        googleTranslateElement.style.right = '20px';
-                    }
-                }
-            });
-
-            // Ensure the widget initializes after the script loads
-            const script = document.createElement('script');
-            script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-            document.body.appendChild(script);
-        });
-    </script>
 </body>
-
 </html>
