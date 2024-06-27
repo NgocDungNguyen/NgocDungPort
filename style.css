@@ -865,50 +865,42 @@ header nav .search i {
     margin: 50px auto;
 }
 
-#google_translate_element {
-    display: none;
-}
-
-.translate-button {
-    background-color: #3d3e42;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 16px;
-    color: #fec86a;
-    font-weight: 500;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
 .translate-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 2000;
-    background-color: #34353b;
-    border-radius: 5px;
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: inline-block;
 }
 
-.translate-container select {
-    background-color: #3d3e42;
-    color: #fec86a;
-    border: 1px solid #fec86a;
-    border-radius: 5px;
-    padding: 5px;
-    outline: none;
+.translate-btn {
+    background-color: #fec86a;
+    color: #34353b;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
-.translate-button:hover {
-    background-color: #2c2d31;
+.translate-options {
+    display: none;
+    position: absolute;
+    background-color: #3d3e42;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
 }
-       
+
+.translate-options a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.translate-options a:hover {
+    background-color: #575a5d;
+}
+
         @media (max-width: 768px) {
             header {
                 padding: 20px;
@@ -918,6 +910,11 @@ header nav .search i {
             header nav {
                 flex-direction: column;
                 align-items: flex-start;
+            }
+
+            .nav-links .translate-container {
+                display: block;
+                margin-top: 10px;
             }
 
             .hamburger {
@@ -956,14 +953,9 @@ header nav .search i {
             }
 
             
-    .nav-links .search, 
-    #google_translate_element {
+    .nav-links .search {
         width: 100%;
         margin: 10px 0;
-    }
-
-    #google_translate_element {
-        order: 1;
     }
 
             .landing {
@@ -1148,7 +1140,15 @@ header nav .search i {
                 max-width: 100%;
             }
             .translate-container {
-                position: static;
-                margin: 20px 0;
+                width: 100%;
+            }
+        
+            .translate-btn {
+                width: 100%;
+                text-align: left;
+            }
+        
+            .translate-options {
+                width: 100%;
             }
         }
