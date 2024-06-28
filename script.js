@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     const seeAllAwardsBtn = document.getElementById("see-all-awards-btn");
+    const seeLessAwardsBtn = document.getElementById("see-less-awards-btn");
     const seeAllCertsBtn = document.getElementById("see-all-certs-btn");
+    const seeLessCertsBtn = document.getElementById("see-less-certs-btn");
     const awardsDetails = document.getElementById("awards-details");
     const certificationsDetails = document.getElementById("certifications-details");
     const modal = document.getElementById("modal");
     const closeModalBtn = document.querySelector(".close-btn");
     const modalBody = document.getElementById("modal-body");
     const modalImages = document.getElementById("modal-images");
+
     const awardsData = [
         {
             id: 1,
@@ -44,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "1st Prize International Youth Robot Vietnam 2018",
             issuedBy: "Vietnam",
             year: "2018",
-            images: ["asset/images/IYRCVN2018.jpg","  asset/images/IYRCVN2018(1).jpg","asset/images/IYRCVN2018(2).jpg"],
+            images: ["asset/images/IYRCVN2018.jpg","asset/images/IYRCVN2018(1).jpg","asset/images/IYRCVN2018(2).jpg"],
             topic: "Build a robot or system that involves the 17 Sustainable Development Goals of the United Nations. We chose the goal “Good health and well-being”.",
             scale: "National, over 300 Students were chosen from City-level competition of Ha Noi, Ho Chi Minh, and Da Nang",
             description: "First participation in a national robotic competition. Gained valuable experience as the team leader. Completed two models within a challenging one-month timeframe. Learned how to handle stress and motivate the team in difficult circumstances. Overcame technical issues with the surgical robot before the presentation. Successfully repaired loose parts and fixed codes under time pressure. Demonstrated exceptional model performance and presentation skills. Developed T.I.M.S. (The Intelligence Medical System) comprising a smart bed and surgical robot. Aimed to improve medical services in Vietnam. Showcased leadership and teamwork abilities. Persevered through technical challenges and achieved success.",
@@ -159,10 +162,12 @@ document.addEventListener("DOMContentLoaded", function () {
             description: "Participated in the IYRC competition in Thailand, continuing to develop skills in robotics and programming."
         }
     ];
-    // Function to display initial 3 items and add "See More" event listeners
-    function displayInitialItems() {
+
+     // Function to display initial items
+     function displayInitialItems() {
         awardsDetails.innerHTML = ""; // Clear existing content
         certificationsDetails.innerHTML = ""; // Clear existing content
+
         awardsData.slice(0, 3).forEach(award => {
             const awardItem = document.createElement("div");
             awardItem.classList.add("award-cert-item");
@@ -173,6 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
             awardsDetails.appendChild(awardItem);
         });
+
         awardsData.slice(10, 12).forEach(cert => {
             const certItem = document.createElement("div");
             certItem.classList.add("award-cert-item");
@@ -183,79 +189,63 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
             certificationsDetails.appendChild(certItem);
         });
+
         addSeeMoreEventListeners(); // Add event listeners to the new "See More" links
     }
-    const seeLessAwardsBtn = document.getElementById("see-less-awards-btn");
-const seeLessCertsBtn = document.getElementById("see-less-certs-btn");
-// Show all awards when "See All Awards" button is clicked
-seeAllAwardsBtn.addEventListener("click", function () {
-    awardsDetails.innerHTML = ""; // Clear the existing content
-    awardsData.slice(0, 10).forEach(award => {
-        const awardItem = document.createElement("div");
-        awardItem.classList.add("award-cert-item");
-        awardItem.innerHTML = `
-            <h3>${award.title}</h3>
-            <p>Issued by ${award.issuedBy}, ${award.year}</p>
-            <a href="#" class="see-more" data-id="${award.id}">See More</a>
-        `;
-        awardsDetails.appendChild(awardItem);
+
+    function displayAllItems() {
+        awardsDetails.innerHTML = "";
+        certificationsDetails.innerHTML = "";
+        
+        awardsData.forEach(award => {
+            const awardItem = document.createElement("div");
+            awardItem.classList.add("award-cert-item");
+            awardItem.innerHTML = `
+                <h3>${award.title}</h3>
+                <p>Issued by ${award.issuedBy}, ${award.year}</p>
+                <a href="#" class="see-more" data-id="${award.id}">See More</a>
+            `;
+            awardsDetails.appendChild(awardItem);
+        });
+
+        awardsData.slice(10, 14).forEach(cert => {
+            const certItem = document.createElement("div");
+            certItem.classList.add("award-cert-item");
+            certItem.innerHTML = `
+                <h3>${cert.title}</h3>
+                <p>Issued by ${cert.issuedBy}, ${cert.year}</p>
+                <a href="#" class="see-more" data-id="${cert.id}">See More</a>
+            `;
+            certificationsDetails.appendChild(certItem);
+        });
+
+        addSeeMoreEventListeners(); // Add event listeners to the new "See More" links
+    }
+
+    seeAllAwardsBtn.addEventListener("click", function () {
+        displayAllItems();
+        seeAllAwardsBtn.style.display = "none";
+        seeLessAwardsBtn.style.display = "block";
     });
-    seeAllAwardsBtn.style.display = "none"; // Hide the "See All Awards" button
-    seeLessAwardsBtn.style.display = "block"; // Show the "See Less Awards" button
-    addSeeMoreEventListeners(); // Add event listeners to the new "See More" links
-});
-// Show less awards when "See Less Awards" button is clicked
-seeLessAwardsBtn.addEventListener("click", function () {
-    awardsDetails.innerHTML = ""; // Clear the existing content
-    awardsData.slice(0, 3).forEach(award => {
-        const awardItem = document.createElement("div");
-        awardItem.classList.add("award-cert-item");
-        awardItem.innerHTML = `
-            <h3>${award.title}</h3>
-            <p>Issued by ${award.issuedBy}, ${award.year}</p>
-            <a href="#" class="see-more" data-id="${award.id}">See More</a>
-        `;
-        awardsDetails.appendChild(awardItem);
+
+    seeLessAwardsBtn.addEventListener("click", function () {
+        displayInitialItems();
+        seeAllAwardsBtn.style.display = "block";
+        seeLessAwardsBtn.style.display = "none";
     });
-    seeAllAwardsBtn.style.display = "block"; // Show the "See All Awards" button
-    seeLessAwardsBtn.style.display = "none"; // Hide the "See Less Awards" button
-    addSeeMoreEventListeners(); // Add event listeners to the new "See More" links
-});
-// Show all certifications when "See All Certifications" button is clicked
-seeAllCertsBtn.addEventListener("click", function () {
-    certificationsDetails.innerHTML = ""; // Clear the existing content
-    awardsData.slice(10, 14).forEach(cert => {
-        const certItem = document.createElement("div");
-        certItem.classList.add("award-cert-item");
-        certItem.innerHTML = `
-            <h3>${cert.title}</h3>
-            <p>Issued by ${cert.issuedBy}, ${cert.year}</p>
-            <a href="#" class="see-more" data-id="${cert.id}">See More</a>
-        `;
-        certificationsDetails.appendChild(certItem);
+
+    seeAllCertsBtn.addEventListener("click", function () {
+        displayAllItems();
+        seeAllCertsBtn.style.display = "none";
+        seeLessCertsBtn.style.display = "block";
     });
-    seeAllCertsBtn.style.display = "none"; // Hide the "See All Certifications" button
-    seeLessCertsBtn.style.display = "block"; // Show the "See Less Certifications" button
-    addSeeMoreEventListeners(); // Add event listeners to the new "See More" links
-});
-// Show less certifications when "See Less Certifications" button is clicked
-seeLessCertsBtn.addEventListener("click", function () {
-    certificationsDetails.innerHTML = ""; // Clear the existing content
-    awardsData.slice(10, 12).forEach(cert => {
-        const certItem = document.createElement("div");
-        certItem.classList.add("award-cert-item");
-        certItem.innerHTML = `
-            <h3>${cert.title}</h3>
-            <p>Issued by ${cert.issuedBy}, ${cert.year}</p>
-            <a href="#" class="see-more" data-id="${cert.id}">See More</a>
-        `;
-        certificationsDetails.appendChild(certItem);
+
+    seeLessCertsBtn.addEventListener("click", function () {
+        displayInitialItems();
+        seeAllCertsBtn.style.display = "block";
+        seeLessCertsBtn.style.display = "none";
     });
-    seeAllCertsBtn.style.display = "block"; // Show the "See All Certifications" button
-    seeLessCertsBtn.style.display = "none"; // Hide the "See Less Certifications" button
-    addSeeMoreEventListeners(); // Add event listeners to the new "See More" links
-});
-    // Add event listeners to the "See More" links
+
     function addSeeMoreEventListeners() {
         const seeMoreLinks = document.querySelectorAll(".see-more");
         seeMoreLinks.forEach(link => {
@@ -268,14 +258,14 @@ seeLessCertsBtn.addEventListener("click", function () {
                     award.images.forEach(img => {
                         imagesHtml += `<img src="${img}" alt="${award.title} image">`;
                     });
-                    
+
                     let linksHtml = "";
                     if (award.links) {
                         award.links.forEach(link => {
                             linksHtml += `<p><a href="${link.url}" target="_blank">${link.text}</a></p>`;
                         });
                     }
-    
+
                     modalBody.innerHTML = `
                         <h2>${award.title}</h2>
                         <p><strong>Issued by:</strong> ${award.issuedBy}</p>
@@ -291,19 +281,22 @@ seeLessCertsBtn.addEventListener("click", function () {
             });
         });
     }
-    
+
     // Close the modal when the close button is clicked
     closeModalBtn.addEventListener("click", function () {
         modal.style.display = "none";
     });
+
     // Close the modal when clicking outside of the modal content
     window.addEventListener("click", function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     });
+
     // Display initial items and add initial "See More" event listeners
     displayInitialItems();
+
     // Intersection Observer for scroll animations
     const sections = document.querySelectorAll('.about, .skills, .portfolio, .experience, .education, .contact-me');
     const observer = new IntersectionObserver(entries => {
@@ -314,18 +307,15 @@ seeLessCertsBtn.addEventListener("click", function () {
             }
         });
     }, { threshold: 0.1 });
+
     sections.forEach(section => {
         observer.observe(section);
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var hamburger = document.querySelector('.hamburger');
-        hamburger.addEventListener('click', toggleMenu);
     });
 
     // Handle hamburger menu
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
+
     hamburger.addEventListener('click', function() {
         navLinks.classList.toggle('expanded');
         if (navLinks.classList.contains('expanded')) {
@@ -334,6 +324,7 @@ seeLessCertsBtn.addEventListener("click", function () {
             navLinks.style.display = 'none';
         }
     });
+
     const navLinksItems = document.querySelectorAll('.nav-links ul li a');
     navLinksItems.forEach(item => {
         item.addEventListener('click', function(event) {
@@ -344,44 +335,9 @@ seeLessCertsBtn.addEventListener("click", function () {
             navLinks.style.display = 'none';
         });
     });
+
     const contactButton = document.querySelector('.intro button');
     contactButton.addEventListener('click', function() {
         document.querySelector('#contact-loc').scrollIntoView({ behavior: 'smooth' });
     });
 });
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,vi,ko,zh-CN,ja',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-    }, 'google_translate_element');
-}
-
-function toggleTranslateOptions() {
-    var translateOptions = document.getElementById("translate-options");
-    if (translateOptions.style.display === "block") {
-        translateOptions.style.display = "none";
-    } else {
-        translateOptions.style.display = "block";
-    }
-}
-
-function translatePage(language) {
-    var translateElement = document.getElementById('google_translate_element');
-    if (translateElement) {
-        var iframe = translateElement.querySelector('iframe');
-        if (iframe) {
-            var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-            var selectElement = iframeDocument.querySelector('select');
-            if (selectElement) {
-                selectElement.value = language;
-                selectElement.dispatchEvent(new Event('change'));
-            }
-        }
-    }
-    toggleTranslateOptions();
-}
-
-// Initialize Google Translate
-googleTranslateElementInit();
