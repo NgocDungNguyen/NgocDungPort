@@ -142,16 +142,10 @@
                         <a href="#" class="see-more" data-award="10" data-translate="seeMore">See More</a>
                     </div>
                 </div>
-
-
                 <button id="see-all-awards-btn">See All Awards</button>
                 <button id="see-less-awards-btn" style="display: none;">See Less Awards</button>
-
                 <button id="see-less-awards-btn" style="display: none;" data-translate="seeLessAwards">See Less Awards</button>
             </div>
-
-            
-
             <div class="certifications-column">
                 <h2 data-translate="certifications">Certifications</h2>
                 <div class="awards-certs-details fade-in" id="certifications-details">
@@ -167,7 +161,6 @@
                         <a href="#" class="see-more" data-award="12" data-translate="seeMore">See More</a>
                     </div>
                     <div class="award-cert-item">
-
                         <h3 data-translate="cert3Title">Participate in IYRC 2017 (Malaysia)</h3>
                         <p data-translate="cert3Desc">Issued by International Youth Robot Competition, 2017</p>
                         <a href="#" class="see-more" data-award="13" data-translate="seeMore">See More</a>
@@ -178,7 +171,6 @@
                         <a href="#" class="see-more" data-award="14" data-translate="seeMore">See More</a>
                     </div>
                 </div>
-
                 <button id="see-all-certs-btn" data-translate="seeAllCerts">See All Certifications</button>
                 <button id="see-less-certs-btn" style="display: none;" data-translate="seeLessCerts">See Less Certifications</button>
             </div>
@@ -193,7 +185,6 @@
             <div class="modal-right" id="modal-images"></div>
         </div>
     </div>
-
 
     <section class="skills" id="skills">
         <h1 data-translate="skills">Skills</h1>
@@ -304,7 +295,7 @@
             </div>
         </div>
         <div class="exp fade-in">
-            <h2 data-translate="exp2Title">Technical Controller Part-time <span class="period">Apr 2024 – Present</span></h2>
+            <h2 data-translate="exp2Title">Technical Controller Part-time <span class="period">Jul 2022 - Jun 2023</span></h2>
             <div class="exp-desc">
                 <h3 data-translate="exp2Company">Game Master (Genesis Escape), Ha Noi</h3>
                 <ul>
@@ -315,7 +306,7 @@
             </div>
         </div>
         <div class="exp fade-in">
-            <h2 data-translate="exp3Title">IT and Mechanical Mentor <span class="period">Nov 2023 – Feb 2024</span></h2>
+            <h2 data-translate="exp3Title">IT and Mechanical Mentor <span class="period">Jul 2021 - Jun 2022</span></h2>
             <div class="exp-desc">
                 <h3 data-translate="exp3Company">Edison School, Ha Noi</h3>
                 <ul>
@@ -325,7 +316,7 @@
             </div>
         </div>
         <div class="exp fade-in">
-            <h2 data-translate="exp4Title">Sale Associate <span class="period">Jul 2022 – Jun 2023</span></h2>
+            <h2 data-translate="exp4Title">Sales Associate <span class="period">Jul 2020 - Jun 2021</span></h2>
             <div class="exp-desc">
                 <h3 data-translate="exp4Company">Uniqlo, Australia</h3>
                 <ul>
@@ -339,71 +330,23 @@
         <button class="tts-button" data-section="experience" data-translate="readExperienceSection">Read Experience Section</button>
     </section>
 
-    <section class="contact-me" id="contact-me">
-        <h1 data-translate="contactMe">Contact Me</h1>
-        <div class="contact">
-            <div class="contact-card">
-                <i class="ri-message-3-line"></i>
-                <p data-translate="contactEmail">juneng2108@gmail.com</p>
-            </div>
-            <div class="contact-card">
-                <i class="ri-phone-line"></i>
-                <p data-translate="contactPhone">+84 865 949 604</p>
-            </div>
-            <div class="contact-card">
-                <i class="ri-map-pin-3-line"></i>
-                <p data-translate="contactAddress">Ha Noi, Viet Nam</p>
-            </div>
+    <section class="contact" id="contact-loc">
+        <h1 data-translate="contactMe">Contact</h1>
+        <div class="contact-info">
+            <p data-translate="contactEmail">juneng2108@gmail.com</p>
+            <p data-translate="contactPhone">+84 865 949 604</p>
+            <p data-translate="contactAddress">Ha Noi, Viet Nam</p>
         </div>
-        <button class="tts-button" data-section="contact-me" data-translate="readContactSection">Read Contact Section</button>
+        <button class="tts-button" data-section="contact-loc" data-translate="readContactSection">Read Contact Section</button>
     </section>
+
+    <footer>
+        <p>&copy; 2023 Ngoc Dung Nguyen. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
     <script>
-        const apiKey = 'pdct.1.1.20240627T042005Z.3f4d47c370f26660.191f097f8597865abf9beccfa2c3c965b9b935fa';
-        const endpoint = 'https://translate.yandex.net/api/v1.5/tr.json/translate';
-
-        async function translateText(text, targetLang) {
-            console.log(`Translating text: ${text} to ${targetLang}`);
-            try {
-                const response = await fetch(`${endpoint}?key=${apiKey}&text=${encodeURIComponent(text)}&lang=${targetLang}`, {
-                    method: 'GET'
-                });
-        
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-        
-                const data = await response.json();
-                return data.text[0];
-            } catch (error) {
-                console.error('Error translating text:', error);
-                return text; // Fallback to original text in case of error
-            }
-        }
-        
-
-        async function translatePage(targetLang) {
-            const elements = document.querySelectorAll("[data-translate]");
-            for (const element of elements) {
-                const originalText = element.getAttribute("data-original-text") || element.innerText;
-                const translatedText = await translateText(originalText, targetLang);
-                element.innerHTML = translatedText;
-                element.setAttribute("data-original-text", originalText); // Store original text for future translations
-            }
-        }
-        
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const translateOptions = document.querySelectorAll('.translate-options a');
-            translateOptions.forEach(function(option) {
-                option.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const lang = this.getAttribute('data-lang');
-                    translatePage(lang);
-                });
-            });
-
+    
             const dictionary = {
                 en: {
                     "about": "About",
@@ -948,52 +891,62 @@
                 }
             };
 
-            function translateText(text, targetLang) {
-                // Simple dictionary-based translation
-                const words = text.split(' ');
-                return words.map(word => dictionary[targetLang][word.toLowerCase()] || word).join(' ');
-            }
-
-            function updateContent(lang) {
-                document.querySelectorAll("[data-translate]").forEach(function(element) {
-                    const originalText = element.getAttribute("data-original-text") || element.innerText;
-                    const translatedText = translateText(originalText, lang);
-                    element.innerHTML = translatedText;
-                    element.setAttribute("data-original-text", originalText); // Store original text for future translations
+            document.addEventListener('DOMContentLoaded', function () {
+                const translateOptions = document.querySelectorAll('.translate-options a');
+                translateOptions.forEach(function (option) {
+                    option.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const lang = this.getAttribute('data-lang');
+                        translatePage(lang);
+                    });
                 });
-            }
-
-            function translatePage(lang) {
-                updateContent(lang);
-            }
-
-            // Initialize with default language
-            updateContent('en');
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const ttsButtons = document.querySelectorAll('.tts-button');
-        
-            ttsButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const sectionId = this.getAttribute('data-section');
-                    const sectionContent = document.getElementById(sectionId).innerText;
-                    const lang = document.documentElement.lang || 'en';
-                    readText(sectionContent, lang);
-                });
-            });
-        
-            function readText(text, lang) {
-                if ('speechSynthesis' in window) {
-                    const utterance = new SpeechSynthesisUtterance(text);
-                    utterance.lang = lang; // Set the language
-                    window.speechSynthesis.speak(utterance);
-                } else {
-                    alert("Your browser does not support text-to-speech.");
+    
+                function translateText(text, lang) {
+                    if (dictionary[lang] && dictionary[lang][text]) {
+                        return dictionary[lang][text];
+                    }
+                    return text; // Fallback to original text if translation is not found
                 }
-            }
-        });
-        
-    </script>
-</body>
-</html>
+    
+                function updateContent(lang) {
+                    document.querySelectorAll("[data-translate]").forEach(function (element) {
+                        const key = element.getAttribute("data-translate");
+                        if (key && dictionary[lang][key]) {
+                            element.innerHTML = dictionary[lang][key];
+                        }
+                    });
+                }
+    
+                function translatePage(lang) {
+                    updateContent(lang);
+                }
+    
+                // Initialize with default language
+                updateContent('en');
+            });
+    
+            document.addEventListener("DOMContentLoaded", function () {
+                const ttsButtons = document.querySelectorAll('.tts-button');
+    
+                ttsButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const sectionId = this.getAttribute('data-section');
+                        const sectionContent = document.getElementById(sectionId).innerText;
+                        const lang = document.documentElement.lang || 'en';
+                        readText(sectionContent, lang);
+                    });
+                });
+    
+                function readText(text, lang) {
+                    if ('speechSynthesis' in window) {
+                        const utterance = new SpeechSynthesisUtterance(text);
+                        utterance.lang = lang; // Set the language
+                        window.speechSynthesis.speak(utterance);
+                    } else {
+                        alert("Your browser does not support text-to-speech.");
+                    }
+                }
+            });
+        </script>
+    </body>
+    </html>
