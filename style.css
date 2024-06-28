@@ -1,17 +1,22 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
+
 body {
     font-family: "Roboto", sans-serif;
     background-color: #34353b;
 }
+
 header {
     height: 100vh;
     padding: 36px 100px;
@@ -21,6 +26,7 @@ header {
     background-repeat: no-repeat;
     width: 100vw;
 }
+
 header nav {
     display: flex;
     justify-content: space-between;
@@ -29,30 +35,37 @@ header nav {
     width: 90%;
     z-index: 99;
 }
+
 header nav img {
     height: 56px;
     width: 56px;
     object-fit: contain;
     filter: invert(70%) sepia(96%) saturate(558%) hue-rotate(359deg) brightness(103%) contrast(106%);
 }
+
 header nav ul {
     display: flex;
 }
+
 header nav ul li {
     list-style: none;
     margin: 0px 20px;
 }
+
 header nav ul li a {
     color: #98999a;
     text-decoration: none;
     transition: all ease 0.5s;
 }
+
 header nav ul li a:hover {
     color: #fbfbfb;
 }
+
 header nav ul li .active {
     color: #fbfbfb;
 }
+
 header nav .search {
     height: 48px;
     width: 200px;
@@ -63,6 +76,7 @@ header nav .search {
     padding: 4px;
     border-radius: 10px;
 }
+
 header nav .search input {
     border: none;
     background-color: transparent;
@@ -70,13 +84,16 @@ header nav .search input {
     color: #fbfbfb;
     outline: none;
 }
+
 header nav .search input::placeholder {
     color: #98999a;
     font-size: 16px;
 }
+
 header nav .search i {
     color: #98999a;
 }
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -86,6 +103,7 @@ header nav .search i {
     right: 20px;
     z-index: 100;
 }
+
 .hamburger div {
     width: 25px;
     height: 3px;
@@ -93,28 +111,35 @@ header nav .search i {
     margin: 4px;
     transition: all 0.3s ease;
 }
+
 .nav-links {
     display: flex;
     align-items: center;
 }
+
 .nav-links ul {
     display: flex;
     list-style: none;
 }
+
 .nav-links ul li {
     margin: 0 20px;
 }
+
 .nav-links ul li a {
     color: #98999a;
     text-decoration: none;
     transition: all 0.5s ease;
 }
+
 .nav-links ul li a:hover {
     color: #fbfbfb;
 }
+
 .nav-links ul li .active {
     color: #fbfbfb;
 }
+
 .nav-links .search {
     height: 48px;
     width: 200px;
@@ -125,6 +150,7 @@ header nav .search i {
     padding: 4px;
     border-radius: 10px;
 }
+
 .nav-links .search input {
     border: none;
     background-color: transparent;
@@ -132,13 +158,16 @@ header nav .search i {
     color: #fbfbfb;
     outline: none;
 }
+
 .nav-links .search input::placeholder {
     color: #98999a;
     font-size: 16px;
 }
+
 .nav-links .search i {
     color: #98999a;
 }
+
 .landing {
     display: flex;
     height: 90vh;
@@ -146,21 +175,25 @@ header nav .search i {
     align-items: center;
     justify-content: space-between;
 }
+
 .landing .intro {
     display: flex;
     flex-direction: column;
 }
+
 .landing .intro h3 {
     color: #fbfbfb;
     font-weight: 400;
     font-size: 32px;
     margin-left: 10vw;
 }
+
 .landing .intro h3 span {
     color: #fec86a;
     font-weight: 600;
     font-size: 3.5rem;
 }
+
 .intro button {
     height: 48px;
     width: 144px;
@@ -173,10 +206,12 @@ header nav .search i {
     font-size: 16px;
     transition: all ease 0.5s;
 }
+
 .intro button:hover {
     background-color: #fec86a;
     color: #34353b;
 }
+
 .socials {
     display: flex;
     flex-direction: column;
@@ -184,15 +219,18 @@ header nav .search i {
     align-items: center;
     margin-top: 50vh;
 }
+
 .socials .line {
     background-color: #fec86a;
     height: 15vh;
     width: 2.5px;
 }
+
 .socials i {
     color: #fbfbfb;
     font-size: 36px;
 }
+
 .about,
 .skills,
 .portfolio,
@@ -203,19 +241,23 @@ header nav .search i {
     transform: translateY(100px);
     transition: all 0.5s ease-in-out;
 }
+
 .slide-in {
     transform: translateY(0);
     opacity: 1;
 }
+
 .fade-in {
     animation: fadeIn 1s forwards;
 }
+
 @keyframes fadeIn {
     to {
         transform: translateY(0);
         opacity: 1;
     }
 }
+
 @keyframes slideIn {
     from {
         transform: translateX(-100%);
@@ -226,6 +268,7 @@ header nav .search i {
         opacity: 1;
     }
 }
+
 .about {
     height: auto;
     width: 100vw;
@@ -236,6 +279,7 @@ header nav .search i {
     align-items: center;
     justify-content: center;
 }
+
 .about h1 {
     font-size: 56px;
     font-weight: 700;
@@ -244,6 +288,7 @@ header nav .search i {
     margin-bottom: 20px;
     transition: all 0.5s ease-in-out;
 }
+
 .about .description {
     display: flex;
     flex-direction: column;
@@ -251,6 +296,7 @@ header nav .search i {
     text-align: center;
     max-width: 800px;
 }
+
 .about .description .line {
     height: 2.5px;
     width: 100px;
@@ -258,15 +304,18 @@ header nav .search i {
     margin-bottom: 20px;
     transition: all 0.5s ease-in-out;
 }
+
 .about .description p {
     color: #fbfbfb;
     font-size: 20px;
     line-height: 1.6;
     transition: all 0.5s ease-in-out;
 }
+
 .about .description p span {
     color: #fec86a;
 }
+
 .awards-certifications {
     width: 100vw;
     padding: 50px 100px;
@@ -276,6 +325,7 @@ header nav .search i {
     align-items: center;
     justify-content: center;
 }
+
 .awards-certifications h1 {
     font-size: 56px;
     font-weight: 700;
@@ -283,17 +333,20 @@ header nav .search i {
     font-family: "Libre Baskerville", serif;
     margin-bottom: 50px;
 }
+
 .columns-container {
     display: flex;
     width: 100%;
     max-width: 1200px;
     justify-content: space-between;
 }
+
 .awards-column,
 .certifications-column {
     flex: 1;
     margin: 0 20px;
 }
+
 .awards-column h2,
 .certifications-column h2 {
     font-size: 32px;
@@ -301,6 +354,7 @@ header nav .search i {
     color: #fec86a;
     margin-bottom: 20px;
 }
+
 .awards-certs-details {
     background-color: #3d3e42;
     border-radius: 20px;
@@ -309,29 +363,36 @@ header nav .search i {
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .award-cert-item {
     margin-bottom: 20px;
 }
+
 .award-cert-item h3 {
     color: #fec86a;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 10px;
 }
+
 .award-cert-item p {
     color: #fbfbfb;
     font-size: 20px;
     font-weight: 400;
     margin: 10px 0;
 }
+
 .award-cert-item .see-more {
     color: #fec86a;
     text-decoration: none;
     font-size: 16px;
 }
+
 .award-cert-item .see-more:hover  {
     text-decoration: underline;
 }
+
+
 #see-all-awards-btn,
 #see-less-awards-btn,
 #see-all-certs-btn,
@@ -348,12 +409,15 @@ header nav .search i {
     cursor: pointer;
     transition: all ease 0.5s;
 }
+
 #see-all-awards-btn:hover,
 #see-less-awards-btn:hover,
 #see-all-certs-btn:hover,
 #see-less-certs-btn:hover {
     background-color: #cc9e4e;
 }
+
+
 .modal {
     display: none;
     position: fixed;
@@ -367,6 +431,7 @@ header nav .search i {
     justify-content: center;
     align-items: center;
 }
+
 .modal-content {
     position: relative;
     display: flex;
@@ -381,6 +446,7 @@ header nav .search i {
     top: 50%;
     transform: translateY(-50%);
 }
+
 .close-btn {
     position: absolute;
     top: 10px;
@@ -390,16 +456,20 @@ header nav .search i {
     font-weight: bold;
     cursor: pointer;
 }
+
 .close-btn:hover,
 .close-btn:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
+
 .modal-left {
     flex: 2;
     padding-right: 20px;
 }
+
+
 .modal-right img {
     width: 100%;
     height: auto;
@@ -408,20 +478,25 @@ header nav .search i {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
+
 .modal-right img:hover {
     transform: scale(1.05);
 }
+
 .modal-content h2 {
     font-size: 24px !important; /* Explicitly set font size */
     font-weight: bold !important; /* Explicitly set font weight */
     color: #333 !important; /* Explicitly set text color */
     margin-bottom: 10px !important; /* Add some margin for spacing */
 }
+
 .modal-content p {
     font-size: 16px !important; /* Explicitly set font size */
     color: #666 !important; /* Explicitly set text color */
     margin-bottom: 10px !important; /* Add some margin for spacing */
 }
+
+
 .modal-right {
     display: flex;
     flex-wrap: wrap;
@@ -429,6 +504,7 @@ header nav .search i {
     gap: 10px;
     margin-top: 20px;
 }
+
 .modal-right img {
     width: 100%;
     height: auto;
@@ -437,9 +513,11 @@ header nav .search i {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
+
 .modal-right img:hover {
     transform: scale(1.05);
 }
+
 .skills {
     display: flex;
     flex-direction: column;
@@ -447,12 +525,14 @@ header nav .search i {
     justify-content: center;
     padding: 50px 100px;
 }
+
 .skills h1 {
     font-size: 56px;
     font-weight: 700;
     color: #fec86a;
     font-family: "Libre Baskerville", serif;
 }
+
 .cards {
     display: flex;
     align-items: center;
@@ -462,6 +542,7 @@ header nav .search i {
     margin-top: 50px;
     gap: 2.5vh;
 }
+
 .skill-card {
     height: 20vw;
     width: 20vw;
@@ -475,19 +556,23 @@ header nav .search i {
     gap: 2.5vh;
     transition: all ease 0.5s;
 }
+
 .skill-card:hover {
     background-color: #fec86a;
 }
+
 .skill-card img {
     height: 7.5vw;
     width: 7.5vw;
     object-fit: contain;
 }
+
 .skill-card h2 {
     font-size: 24px;
     font-weight: 400;
     color: #fbfbfb;
 }
+
 .portfolio {
     display: flex;
     flex-direction: column;
@@ -495,18 +580,21 @@ header nav .search i {
     justify-content: center;
     padding: 50px 100px;
 }
+
 .portfolio h1 {
     font-size: 56px;
     font-weight: 700;
     color: #fec86a;
     font-family: "Libre Baskerville", serif;
 }
+
 .portfolio-cards {
     display: grid;
     grid-template-columns: auto auto auto;
     margin-top: 50px;
     gap: 2.5vh;
 }
+
 .portfolio-card {
     position: relative;
     height: 30vw;
@@ -519,12 +607,14 @@ header nav .search i {
     gap: 2.5vh;
     transition: all ease 0.5s;
 }
+
 .portfolio-card img {
     position: relative;
     height: 30vw;
     width: 30vw;
     object-fit: cover;
 }
+
 .portfolio-card .overlay {
     position: absolute;
     top: 50%;
@@ -542,15 +632,18 @@ header nav .search i {
     opacity: 0;
     transition: all ease 0.5s;
 }
+
 .portfolio-card .overlay h3 {
     color: #fbfbfb;
     font-size: 24px;
 }
+
 .portfolio-card .overlay p {
     color: #fbfbfb;
     font-size: 16px;
     text-align: center;
 }
+
 .portfolio-card .overlay button {
     height: 36px;
     width: 108px;
@@ -562,9 +655,11 @@ header nav .search i {
     transition: all ease 0.5s;
     cursor: pointer;
 }
+
 .portfolio-card .overlay:hover {
     opacity: 1;
 }
+
 .portfolio button {
     margin-top: 50px;
     height: 48px;
@@ -578,9 +673,11 @@ header nav .search i {
     cursor: pointer;
     transition: all ease 0.5s;
 }
+
 .portfolio button:hover {
     background-color: #cc9e4e;
 }
+
 .experience {
     display: flex;
     flex-direction: column;
@@ -591,6 +688,7 @@ header nav .search i {
     padding: 50px 100px;
     background-color: #1f2023;
 }
+
 .experience h1 {
     color: #fec86a;
     font-size: 56px;
@@ -598,6 +696,7 @@ header nav .search i {
     margin-bottom: 50px;
     transition: all 0.5s ease-in-out;
 }
+
 .experience .exp {
     background-color: #2c2d31;
     border-radius: 20px;
@@ -610,32 +709,38 @@ header nav .search i {
     opacity: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .experience .exp:hover {
     background-color: #faeed9;
     transform: scale(1.05);
 }
+
 .experience .exp h2 {
     color: #fec86a;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 10px;
 }
+
 .experience .exp h3 {
     color: #fbfbfb;
     font-size: 20px;
     font-weight: 400;
     margin: 10px 0;
 }
+
 .experience .exp ul {
     list-style-type: disc;
     padding-left: 20px;
 }
+
 .experience .exp ul li {
     color: #fbfbfb;
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 10px;
 }
+
 .exp h2 {
     display: flex;
     justify-content: space-between;
@@ -645,18 +750,21 @@ header nav .search i {
     font-weight: 700;
     margin-bottom: 10px;
 }
+
 .period {
     color: #fec86a;
     font-size: 16px;
     font-weight: 400;
     margin-left: 10px;
 }
+
 .exp-desc h3 {
     color: #fbfbfb;
     font-size: 20px;
     font-weight: 400;
     margin: 10px 0;
 }
+
 .education {
     width: 100vw;
     padding: 50px 100px;
@@ -666,6 +774,7 @@ header nav .search i {
     align-items: center;
     justify-content: center;
 }
+
 .education h1 {
     font-size: 56px;
     font-weight: 700;
@@ -673,6 +782,7 @@ header nav .search i {
     font-family: "Libre Baskerville", serif;
     margin-bottom: 50px;
 }
+
 .education .edu-details {
     background-color: #3d3e42;
     border-radius: 20px;
@@ -682,24 +792,28 @@ header nav .search i {
     max-width: 800px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .education .edu-details h2 {
     color: #fec86a;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 10px;
 }
+
 .education .edu-details h3 {
     color: #fbfbfb;
     font-size: 20px;
     font-weight: 400;
     margin: 10px 0;
 }
+
 .education .edu-details p {
     color: #fbfbfb;
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 10px;
 }
+
 .contact-me {
     width: 100vw;
     padding: 100px;
@@ -708,12 +822,14 @@ header nav .search i {
     align-items: center;
     justify-content: center;
 }
+
 .contact-me h1 {
     font-size: 56px;
     color: #fec86a;
     font-family: "Libre Baskerville", serif;
     font-weight: 700;
 }
+
 .contact {
     display: flex;
     gap: 24px;
@@ -730,10 +846,12 @@ header nav .search i {
     width: 300px;
     height: 100px;
 }
+
 .contact-card i {
     font-size: 24px;
     color: #34353b;
 }
+
 .contact-card p {
     font-size: 18px;
     color: #34353b;
@@ -746,6 +864,7 @@ header nav .search i {
     border-top: 2px solid #fec86a;
     margin: 50px auto;
 }
+
 .translate-container {
     position: relative;
     display: inline-block;
@@ -753,7 +872,6 @@ header nav .search i {
 
 .translate-btn {
     background-color: #fec86a;
-    color: #34353b;
     border: none;
     color: #34353b;
     padding: 10px 20px;
@@ -769,17 +887,13 @@ header nav .search i {
 .translate-options {
     display: none;
     position: absolute;
-    background-color: #3d3e42;
     background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    border-radius: 5px;
 }
 
 .translate-options a {
-    color: white;
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -787,13 +901,16 @@ header nav .search i {
 }
 
 .translate-options a:hover {
-    background-color: #575a5d;
     background-color: #ddd;
 }
 
 .translate-container:hover .translate-options {
     display: block;
 }
+
+
+
+
 .tts-button {
     margin-top: 20px;
     height: 48px;
@@ -818,21 +935,245 @@ header nav .search i {
         @media (max-width: 768px) {
             header {
                 padding: 20px;
-@@ -1140,15 +1167,9 @@ header nav .search i {
+                background-position: center;
+            }
+
+            header nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links .translate-container {
+                display: block;
+                margin-top: 10px;
+            }
+
+            .hamburger {
+                display: flex;
+                z-index: 101;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 250px;
+                height: 100%;
+                align-items: flex-start;
+                background-color: #34353b;
+                position: fixed;
+                top: 0;
+                right: 0;
+                padding: 20px;
+                z-index: 100;
+                transition: transform 0.3s ease;
+                transform: translateX(-100%);
+            }
+
+            .nav-links.expanded {
+                transform: translateX(0);
+            }
+
+            .nav-links ul {
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+            }
+
+            .nav-links ul li {
+                width: 100%;
+                text-align: left;
+            }
+
+            
+    .nav-links .search {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+            .landing {
+                flex-direction: column;
+                align-items: flex-start;
+                height: auto;
+                padding: 20px;
+            }
+
+            .landing .intro h3 {
+                font-size: 24px;
+                margin-left: 0;
+            }
+
+            .intro button {
+                margin-left: 0;
+            }
+
+            .socials {
+                margin-top: 20px;
+            }
+
+            .about {
+                padding: 50px 20px;
+            }
+
+            .about h1 {
+                font-size: 36px;
+            }
+
+            .about .description p {
+                font-size: 16px;
+            }
+
+            .skills {
+                padding: 50px 20px;
+            }
+
+            .portfolio {
+                padding: 50px 20px;
+            }
+
+            .portfolio-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .experience {
+                padding: 50px 20px;
+            }
+
+            .experience h1 {
+                font-size: 36px;
+            }
+
+            .experience .exp {
+                padding: 20px;
+            }
+
+            .experience .exp h2 {
+                font-size: 24px;
+            }
+
+            .experience .exp h3 {
+                font-size: 18px;
+            }
+
+            .experience .exp ul li {
+                font-size: 14px;
+            }
+
+            .education {
+                padding: 50px 20px;
+            }
+
+            .education h1 {
+                font-size: 36px;
+            }
+
+            .education .edu-details {
+                padding: 20px;
+            }
+
+            .education .edu-details h2 {
+                font-size: 24px;
+            }
+
+            .education .edu-details h3 {
+                font-size: 18px;
+            }
+
+            .education .edu-details p {
+                font-size: 14px;
+            }
+
+            .awards-certifications {
+                padding: 50px 20px;
+            }
+        
+            .awards-certifications h1 {
+                font-size: 36px;
+                text-align: center;
+            }
+        
+            .columns-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .awards-column,
+            .certifications-column {
+                margin: 20px 0;
+                width: 100%;
+            }
+        
+            .awards-column h2,
+            .certifications-column h2 {
+                font-size: 24px;
+                text-align: center;
+            }
+        
+            .awards-certs-details {
+                padding: 20px;
+            }
+        
+            .award-cert-item h3 {
+                font-size: 24px;
+            }
+        
+            .award-cert-item p {
+                font-size: 16px;
+            }
+        
+            .award-cert-item .see-more{
+                font-size: 14px;
+            }
+        
+            #see-all-awards-btn,
+            #see-less-awards-btn,
+            #see-all-certs-btn,
+            #see-less-certs-btn {
+                width: 100%;
+                height: 48px;
+                font-size: 16px;
+            }
+
+            .contact-me {
+                padding: 50px 20px;
+            }
+        
+            .contact-me h1 {
+                font-size: 36px;
+                text-align: center;
+            }
+        
+            .contact {
+                flex-direction: column;
+                gap: 20px;
+            }
+        
+            .contact-card {
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                padding: 20px;
+            }
+        
+            .contact-card i {
+                font-size: 20px;
+            }
+        
+            .contact-card p {
+                font-size: 16px;
+            }
+            .separator {
+                width: 90%;
+            }
+            .modal-content {
+                padding: 10px;
+            }
+        
+            .modal-right img {
                 max-width: 100%;
             }
             .translate-container {
-                width: 100%;
-            }
-
-            .translate-btn {
-                width: 100%;
-                text-align: left;
                 position: static;
             }
-
             .translate-options {
-                width: 100%;
                 position: static;
             }
         }
