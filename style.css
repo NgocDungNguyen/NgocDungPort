@@ -339,12 +339,14 @@ header nav .search i {
     width: 100%;
     max-width: 1200px;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .awards-column,
 .certifications-column {
     flex: 1;
     margin: 0 20px;
+    max-width: 100%;
 }
 
 .awards-column h2,
@@ -363,6 +365,7 @@ header nav .search i {
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 .award-cert-item {
     margin-bottom: 20px;
@@ -433,7 +436,6 @@ header nav .search i {
 }
 
 .modal-content {
-    position: relative;
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -443,8 +445,6 @@ header nav .search i {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 .close-btn {
@@ -464,45 +464,25 @@ header nav .search i {
     cursor: pointer;
 }
 
-.modal-left {
-    flex: 2;
-    padding-right: 20px;
+.modal-body {
+    margin-bottom: 20px;
+}
+.modal-body h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
 }
 
-
-.modal-right img {
-    width: 100%;
-    height: auto;
-    max-width: 300px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+.modal-body p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
 }
-
-.modal-right img:hover {
-    transform: scale(1.05);
-}
-
-.modal-content h2 {
-    font-size: 24px !important; /* Explicitly set font size */
-    font-weight: bold !important; /* Explicitly set font weight */
-    color: #333 !important; /* Explicitly set text color */
-    margin-bottom: 10px !important; /* Add some margin for spacing */
-}
-
-.modal-content p {
-    font-size: 16px !important; /* Explicitly set font size */
-    color: #666 !important; /* Explicitly set text color */
-    margin-bottom: 10px !important; /* Add some margin for spacing */
-}
-
 
 .modal-right {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 10px;
-    margin-top: 20px;
 }
 
 .modal-right img {
