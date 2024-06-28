@@ -56,7 +56,7 @@
         </div>
     </header>
     <section class="about" id="about">
-        <h1 class="slide-in" data-translate="about">About</h1>
+        <h1 data-translate="about">About</h1>
         <div class="description slide-in">
             <div class="line"></div>
             <p data-translate="aboutText">I am currently pursuing a Bachelor of Information Technology with a minor in Enterprise Systems Development at the Royal Melbourne Institute of Technology. My passion lies in programming and web development, where I have honed my skills in various languages and technologies such as Python, JavaScript, and Node.js. Living and studying at Queensland University of Technology in Australia provided me with an invaluable opportunity to immerse myself in a highly international and professional environment, significantly enhancing both my technical competencies and cultural awareness.</p>
@@ -364,15 +364,16 @@
         const endpoint = 'https://translate.yandex.net/api/v1.5/tr.json/translate';
 
         async function translateText(text, targetLang) {
+            console.log(`Translating text: ${text} to ${targetLang}`);
             try {
                 const response = await fetch(`${endpoint}?key=${apiKey}&text=${encodeURIComponent(text)}&lang=${targetLang}`, {
                     method: 'GET'
                 });
-
+        
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-
+        
                 const data = await response.json();
                 return data.text[0];
             } catch (error) {
@@ -380,6 +381,7 @@
                 return text; // Fallback to original text in case of error
             }
         }
+        
 
         async function translatePage(targetLang) {
             const elements = document.querySelectorAll("[data-translate]");
@@ -390,6 +392,7 @@
                 element.setAttribute("data-original-text", originalText); // Store original text for future translations
             }
         }
+        
 
         document.addEventListener('DOMContentLoaded', function() {
             const translateOptions = document.querySelectorAll('.translate-options a');
@@ -835,65 +838,65 @@
                     "contactAddress": "하노이, 베트남",
                     "readContactSection": "연락처 섹션 읽기"
                 },
-                "zh-CN": {
-                    "about": "关于",
-                    "portfolio": "作品集",
-                    "contactMe": "联系我",
-                    "intro": "我是 <span>Ngoc Dung Nguyen</span><br>全栈开发者 &<br>机器人程序员",
-                    "aboutText": "我目前正在皇家墨尔本理工学院攻读信息技术学士学位，辅修企业系统开发。我对编程和网页开发充满热情，并在Python、JavaScript和Node.js等各种语言和技术中磨练了我的技能。在澳大利亚昆士兰科技大学生活和学习为我提供了一个宝贵的机会，让我沉浸在一个高度国际化和专业的环境中，极大地提高了我的技术能力和文化意识。",
+                jp: {
+                    "about": "紹介",
+                    "portfolio": "ポートフォリオ",
+                    "contactMe": "連絡先",
+                    "intro": "私は <span>Ngoc Dung Nguyen</span><br>フルスタック開発者 &<br>ロボットプログラマーです",
+                    "aboutText": "私は現在、ロイヤルメルボルン工科大学で情報技術学士を取得しており、企業システム開発を副専攻としています。私はプログラミングとウェブ開発に情熱を持っており、Python、JavaScript、およびNode.jsなどのさまざまな言語と技術でスキルを磨いてきました。オーストラリアのクイーンズランド工科大学で生活し、学ぶことにより、非常に国際的でプロフェッショナルな環境に浸る貴重な機会を得て、技術的能力と文化的認識を大幅に向上させることができました。",
                     "education": "教育",
-                    "awardsCertifications": "奖项和认证",
-                    "awards": "奖项",
-                    "certifications": "认证",
-                    "skills": "技能",
-                    "experience": "经验",
-                    "contactMe": "联系我",
-                    "searchPlaceholder": "搜索",
-                    "translateButton": "翻译",
-                    "contactMeButton": "联系我",
-                    "readAboutSection": "阅读关于部分",
-                    "rmitTitle": "皇家墨尔本理工学院 (RMIT)",
-                    "rmitDegree": "信息技术学士",
-                    "rmitMinor": "企业系统开发辅修",
-                    "rmitGpa": "预计2026年5月 | 当前GPA: 3.6",
-                    "qutTitle": "昆士兰科技大学 (QLD, 澳大利亚)",
-                    "qutDegree": "工程学士 (机电一体化)",
+                    "awardsCertifications": "賞と認定",
+                    "awards": "賞",
+                    "certifications": "認定",
+                    "skills": "スキル",
+                    "experience": "経験",
+                    "contactMe": "連絡先",
+                    "searchPlaceholder": "検索",
+                    "translateButton": "翻訳",
+                    "contactMeButton": "連絡先",
+                    "readAboutSection": "紹介セクションを読む",
+                    "rmitTitle": "ロイヤルメルボルン工科大学 (RMIT)",
+                    "rmitDegree": "情報技術学士",
+                    "rmitMinor": "企業システム開発副専攻",
+                    "rmitGpa": "2026年5月予想 | 現在のGPA: 3.6",
+                    "qutTitle": "クイーンズランド工科大学 (QLD, オーストラリア)",
+                    "qutDegree": "工学学士 (メカトロニクス)",
                     "qutDuration": "2022年7月 - 2023年6月",
-                    "readEducationSection": "阅读教育部分",
-                    "award1Title": "第三名 Robotacon HN",
-                    "award1Desc": "由Sao Nam教育中心颁发，2017年",
-                    "award2Title": "第二名 机器人编程人才",
-                    "award2Desc": "由Sao Nam教育中心颁发，2018年",
-                    "award3Title": "第一名 Robotacon HN",
-                    "award3Desc": "由Sao Nam教育中心颁发，2018年",
-                    "award4Title": "第一名 国际青年机器人越南2018",
-                    "award4Desc": "由越南颁发，2018年",
-                    "award5Title": "第一名 - 高中生科学技术竞赛",
-                    "award5Desc": "由Giảng Võ中学颁发，2018年",
-                    "award6Title": "优秀奖 国际青年机器人竞赛",
-                    "award6Desc": "由国际青年机器人竞赛颁发，2019年",
-                    "award7Title": "决赛选手 MakeX机器人竞赛2019",
-                    "award7Desc": "由KDI教育，胡志明市科学技术局颁发，2019年",
-                    "award8Title": "第二名 国际青年机器人竞赛2020",
-                    "award8Desc": "由国际青年机器人竞赛颁发，2020年",
-                    "award9Title": "前10名 RMIT惊艳越南学生竞赛2021",
-                    "award9Desc": "由RMIT和Hoa Hoc Tro报纸颁发，2021年",
-                    "award10Title": "半决赛选手 RMIT TechGenius",
-                    "award10Desc": "由RMIT颁发，2021年",
-                    "seeMore": "查看更多",
-                    "seeAllAwards": "查看所有奖项",
-                    "seeLessAwards": "查看较少奖项",
-                    "cert1Title": "IT和机械指导 VEX IQ机器人竞赛2024",
-                    "cert1Desc": "由STEAM VIETNAM，越南VEX机器人全国锦标赛，Edison学校颁发，2024年",
-                    "cert2Title": "学期新秀",
-                    "cert2Desc": "由学生大使团队 (RMIT学生招生部) 颁发，2024年",
-                    "cert3Title": "参加IYRC 2017 (马来西亚)",
-                    "cert3Desc": "由国际青年机器人竞赛颁发，2017年",
-                    "cert4Title": "参加IYRC 2018 (泰国)",
-                    "cert4Desc": "由国际青年机器人竞赛颁发，2018年",
-                    "seeAllCerts": "查看所有认证",
-                    "seeLessCerts": "查看较少认证",
-                    "readAwardsCertsSection": "阅读奖项和认证部分",
+                    "readEducationSection": "教育セクションを読む",
+                    "award1Title": "3位 Robotacon HN",
+                    "award1Desc": "Sao Nam教育センターによって発行, 2017年",
+                    "award2Title": "2位 ロボットプログラミングの才能",
+                    "award2Desc": "Sao Nam教育センターによって発行, 2018年",
+                    "award3Title": "1位 Robotacon HN",
+                    "award3Desc": "Sao Nam教育センターによって発行, 2018年",
+                    "award4Title": "1位 国際青少年ロボットベトナム2018",
+                    "award4Desc": "ベトナムによって発行, 2018年",
+                    "award5Title": "1位 - 高校生の科学技術コンテスト",
+                    "award5Desc": "Giảng Võ中学校によって発行, 2018年",
+                    "award6Title": "優秀賞 国際青少年ロボットコンテスト",
+                    "award6Desc": "国際青少年ロボットコンテストによって発行, 2019年",
+                    "award7Title": "ファイナリスト MakeXロボットコンテスト2019",
+                    "award7Desc": "KDI教育、ホーチミン市科学技術局によって発行, 2019年",
+                    "award8Title": "2位 国際青少年ロボットコンテスト2020",
+                    "award8Desc": "国際青少年ロボットコンテストによって発行, 2020年",
+                    "award9Title": "Top 10 RMIT Amazing Vietnam Student Competition 2021",
+                    "award9Desc": "RMITおよびHoa Hoc Tro新聞によって発行, 2021年",
+                    "award10Title": "準決勝 TechGenius by RMIT",
+                    "award10Desc": "RMITによって発行, 2021年",
+                    "seeMore": "もっと見る",
+                    "seeAllAwards": "すべての賞を見る",
+                    "seeLessAwards": "少ない賞を見る",
+                    "cert1Title": "ITおよび機械メンタリング VEX IQロボットコンテスト2024",
+                    "cert1Desc": "STEAM VIETNAM、ベトナムVEXロボット全国選手権、Edison学校によって発行, 2024年",
+                    "cert2Title": "学期の新人",
+                    "cert2Desc": "学生大使チーム (RMIT学生募集部) によって発行, 2024年",
+                    "cert3Title": "IYRC 2017 (マレーシア) 参加",
+                    "cert3Desc": "国際青少年ロボットコンテストによって発行, 2017年",
+                    "cert4Title": "IYRC 2018 (タイ) 参加",
+                    "cert4Desc": "国際青少年ロボットコンテストによって発行, 2018年",
+                    "seeAllCerts": "すべての認定を見る",
+                    "seeLessCerts": "少ない認定を見る",
+                    "readAwardsCertsSection": "賞と認定セクションを読む",
                     "html": "HTML",
                     "css": "CSS",
                     "javascript": "JavaScript",
@@ -906,42 +909,42 @@
                     "python": "Python",
                     "arduino": "Arduino",
                     "scratch": "Scratch",
-                    "readSkillsSection": "阅读技能部分",
-                    "project1Title": "人力资源管理网站",
-                    "project1Desc": "一个全面的平台，用于管理员工和公司库存。",
-                    "project2Title": "RMIT团队寻找网站",
-                    "project2Desc": "一个网站，供RMIT学生根据GPA和课程找到并与队友联系。",
-                    "project3Title": "天气和人口跟踪网站",
-                    "project3Desc": "一个网站，用于跟踪、显示和比较全球温度和人口数据。",
-                    "project4Title": "旅游预订网站",
-                    "project4Desc": "一个旅游预订和评论平台。",
-                    "viewMore": "查看更多",
-                    "readPortfolioSection": "阅读项目部分",
-                    "exp1Title": "IT支持专家实习生",
-                    "exp1Company": "Thuy Thailand Consumer Goods, 河内",
-                    "exp1Desc1": "开发基于Web的库存管理应用程序并构建电子商务平台，显著提高客户参与度和运营效率。",
-                    "exp1Desc2": "构建电子商务平台，每月增加10%的客户参与度。",
-                    "exp1Desc3": "定期进行IT维护，提高运营效率。",
-                    "exp2Title": "兼职技术控制员",
-                    "exp2Company": "游戏大师 (Genesis Escape), 河内",
-                    "exp2Desc1": "通过解决客户问题和维护游戏设备，确保100%的游戏成功率。",
-                    "exp2Desc2": "通过高效的技术操作和角色扮演，实现98%的客户满意度。",
-                    "exp2Desc3": "报告技术错误以便及时维护，协作进行日常系统维修。",
-                    "exp3Title": "IT和机械导师",
-                    "exp3Company": "Edison学校, 河内",
-                    "exp3Desc1": "在准备VEX IQ竞赛2024的密集培训计划中指导四个团队的20多名学生，取得了前5名、前10名和两个前20名的成绩。",
-                    "exp3Desc2": "被Edison学校认可为最敬业的学生导师。",
-                    "exp4Title": "销售助理",
-                    "exp4Company": "优衣库, 澳大利亚",
-                    "exp4Desc1": "在一家领先的全球公司工作，获得了宝贵的经验，增强了我对专业和企业环境的理解。",
-                    "exp4Desc2": "与多元化团队合作，遵守严格的协议，并保持优衣库日本标准的高标准。",
-                    "exp4Desc3": "在日本文化的精确和卓越影响下，培养了强烈的职业道德和对细节的关注。",
-                    "exp4Desc4": "学习并体现了优衣库卓越的客户服务行为，优先考虑客户满意度和运营效率。",
-                    "readExperienceSection": "阅读经验部分",
+                    "readSkillsSection": "スキルセクションを読む",
+                    "project1Title": "人事管理ウェブサイト",
+                    "project1Desc": "従業員と会社の在庫を管理するための総合プラットフォーム。",
+                    "project2Title": "RMITチーム検索ウェブサイト",
+                    "project2Desc": "RMITの学生がGPAとコースに基づいてチームメイトを見つけて接続するためのウェブサイト。",
+                    "project3Title": "天気と人口追跡ウェブサイト",
+                    "project3Desc": "世界中の温度と人口データを追跡、表示、および比較するためのウェブサイト。",
+                    "project4Title": "ツアー予約ウェブサイト",
+                    "project4Desc": "旅行ツアーの予約およびレビューのためのプラットフォーム。",
+                    "viewMore": "もっと見る",
+                    "readPortfolioSection": "プロジェクトセクションを読む",
+                    "exp1Title": "ITサポートスペシャリストインターン",
+                    "exp1Company": "Thuy Thailand Consumer Goods, ハノイ",
+                    "exp1Desc1": "ウェブベースの在庫管理アプリを開発し、電子商取引プラットフォームを構築して、顧客のエンゲージメントと運用効率を大幅に向上させました。",
+                    "exp1Desc2": "電子商取引プラットフォームを構築し、毎月10%の顧客エンゲージメントを増加させました。",
+                    "exp1Desc3": "定期的なITメンテナンスを実行し、運用効率を向上させました。",
+                    "exp2Title": "パートタイム技術コントローラー",
+                    "exp2Company": "ゲームマスター (Genesis Escape), ハノイ",
+                    "exp2Desc1": "顧客の問題をトラブルシューティングし、ゲームデバイスを維持することで100%のゲームプレイ成功率を確保しました。",
+                    "exp2Desc2": "効率的な技術運用とロールプレイを通じて98%の顧客満足度を達成しました。",
+                    "exp2Desc3": "タイムリーなメンテナンスのために技術エラーを報告し、日々のシステム修理に協力しました。",
+                    "exp3Title": "ITおよび機械メンター",
+                    "exp3Company": "Edison学校, ハノイ",
+                    "exp3Desc1": "VEX IQコンテスト2024の準備のための集中トレーニングプログラムで20人以上の学生からなる4つのチームを指導し、120チーム中トップ5、トップ10、およびトップ20に2つのチームを配置しました。",
+                    "exp3Desc2": "Edison学校から最も献身的な学生メンターとして認められました。",
+                    "exp4Title": "販売アソシエイト",
+                    "exp4Company": "ユニクロ, オーストラリア",
+                    "exp4Desc1": "先進的なグローバル企業での仕事を通じて、プロフェッショナルおよび企業環境に関する貴重な経験を積みました。",
+                    "exp4Desc2": "多様なチームと協力し、厳格なプロトコルを遵守し、ユニクロ日本基準の高い基準を維持しました。",
+                    "exp4Desc3": "日本の正確さと卓越性の文化に深く影響を受け、強い職業倫理と細部への注意を養いました。",
+                    "exp4Desc4": "顧客満足度と運用効率を優先するユニクロの卓越した顧客サービス行動を学び、体現しました。",
+                    "readExperienceSection": "経験セクションを読む",
                     "contactEmail": "juneng2108@gmail.com",
                     "contactPhone": "+84 865 949 604",
-                    "contactAddress": "河内, 越南",
-                    "readContactSection": "阅读联系部分"
+                    "contactAddress": "ハノイ, ベトナム",
+                    "readContactSection": "連絡先セクションを読む"
                 }
             };
 
