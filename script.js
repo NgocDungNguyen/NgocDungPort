@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const seeAllAwardsBtn = document.getElementById("see-all-awards-btn");
     const seeAllCertsBtn = document.getElementById("see-all-certs-btn");
@@ -8,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeModalBtn = document.querySelector(".close-btn");
     const modalBody = document.getElementById("modal-body");
     const modalImages = document.getElementById("modal-images");
-
     const awardsData = [
         {
             id: 1,
@@ -110,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 { url: "https://drive.google.com/file/d/17yjgPGqnUyDhu3P_oL51Dz1mJgFnA8AF/view?usp=sharing", text: "Final Video" }
             ]
         },
-
         {
             id: 10,
             title: "Semi-Finalist TechGenius By RMIT",
@@ -162,12 +159,10 @@ document.addEventListener("DOMContentLoaded", function () {
             description: "Participated in the IYRC competition in Thailand, continuing to develop skills in robotics and programming."
         }
     ];
-
     // Function to display initial 3 items and add "See More" event listeners
     function displayInitialItems() {
         awardsDetails.innerHTML = ""; // Clear existing content
         certificationsDetails.innerHTML = ""; // Clear existing content
-
         awardsData.slice(0, 3).forEach(award => {
             const awardItem = document.createElement("div");
             awardItem.classList.add("award-cert-item");
@@ -178,7 +173,6 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
             awardsDetails.appendChild(awardItem);
         });
-
         awardsData.slice(10, 12).forEach(cert => {
             const certItem = document.createElement("div");
             certItem.classList.add("award-cert-item");
@@ -189,13 +183,10 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
             certificationsDetails.appendChild(certItem);
         });
-
         addSeeMoreEventListeners(); // Add event listeners to the new "See More" links
     }
-
     const seeLessAwardsBtn = document.getElementById("see-less-awards-btn");
 const seeLessCertsBtn = document.getElementById("see-less-certs-btn");
-
 // Show all awards when "See All Awards" button is clicked
 seeAllAwardsBtn.addEventListener("click", function () {
     awardsDetails.innerHTML = ""; // Clear the existing content
@@ -213,7 +204,6 @@ seeAllAwardsBtn.addEventListener("click", function () {
     seeLessAwardsBtn.style.display = "block"; // Show the "See Less Awards" button
     addSeeMoreEventListeners(); // Add event listeners to the new "See More" links
 });
-
 // Show less awards when "See Less Awards" button is clicked
 seeLessAwardsBtn.addEventListener("click", function () {
     awardsDetails.innerHTML = ""; // Clear the existing content
@@ -231,7 +221,6 @@ seeLessAwardsBtn.addEventListener("click", function () {
     seeLessAwardsBtn.style.display = "none"; // Hide the "See Less Awards" button
     addSeeMoreEventListeners(); // Add event listeners to the new "See More" links
 });
-
 // Show all certifications when "See All Certifications" button is clicked
 seeAllCertsBtn.addEventListener("click", function () {
     certificationsDetails.innerHTML = ""; // Clear the existing content
@@ -249,7 +238,6 @@ seeAllCertsBtn.addEventListener("click", function () {
     seeLessCertsBtn.style.display = "block"; // Show the "See Less Certifications" button
     addSeeMoreEventListeners(); // Add event listeners to the new "See More" links
 });
-
 // Show less certifications when "See Less Certifications" button is clicked
 seeLessCertsBtn.addEventListener("click", function () {
     certificationsDetails.innerHTML = ""; // Clear the existing content
@@ -267,7 +255,6 @@ seeLessCertsBtn.addEventListener("click", function () {
     seeLessCertsBtn.style.display = "none"; // Hide the "See Less Certifications" button
     addSeeMoreEventListeners(); // Add event listeners to the new "See More" links
 });
-
     // Add event listeners to the "See More" links
     function addSeeMoreEventListeners() {
         const seeMoreLinks = document.querySelectorAll(".see-more");
@@ -309,17 +296,14 @@ seeLessCertsBtn.addEventListener("click", function () {
     closeModalBtn.addEventListener("click", function () {
         modal.style.display = "none";
     });
-
     // Close the modal when clicking outside of the modal content
     window.addEventListener("click", function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     });
-
     // Display initial items and add initial "See More" event listeners
     displayInitialItems();
-
     // Intersection Observer for scroll animations
     const sections = document.querySelectorAll('.about, .skills, .portfolio, .experience, .education, .contact-me');
     const observer = new IntersectionObserver(entries => {
@@ -330,7 +314,6 @@ seeLessCertsBtn.addEventListener("click", function () {
             }
         });
     }, { threshold: 0.1 });
-
     sections.forEach(section => {
         observer.observe(section);
     });
@@ -343,7 +326,6 @@ seeLessCertsBtn.addEventListener("click", function () {
     // Handle hamburger menu
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-
     hamburger.addEventListener('click', function() {
         navLinks.classList.toggle('expanded');
         if (navLinks.classList.contains('expanded')) {
@@ -352,7 +334,6 @@ seeLessCertsBtn.addEventListener("click", function () {
             navLinks.style.display = 'none';
         }
     });
-
     const navLinksItems = document.querySelectorAll('.nav-links ul li a');
     navLinksItems.forEach(item => {
         item.addEventListener('click', function(event) {
@@ -363,10 +344,44 @@ seeLessCertsBtn.addEventListener("click", function () {
             navLinks.style.display = 'none';
         });
     });
-
     const contactButton = document.querySelector('.intro button');
     contactButton.addEventListener('click', function() {
         document.querySelector('#contact-loc').scrollIntoView({ behavior: 'smooth' });
     });
 });
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,vi,ko,zh-CN,ja',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+    }, 'google_translate_element');
+}
 
+function toggleTranslateOptions() {
+    var translateOptions = document.getElementById("translate-options");
+    if (translateOptions.style.display === "block") {
+        translateOptions.style.display = "none";
+    } else {
+        translateOptions.style.display = "block";
+    }
+}
+
+function translatePage(language) {
+    var translateElement = document.getElementById('google_translate_element');
+    if (translateElement) {
+        var iframe = translateElement.querySelector('iframe');
+        if (iframe) {
+            var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+            var selectElement = iframeDocument.querySelector('select');
+            if (selectElement) {
+                selectElement.value = language;
+                selectElement.dispatchEvent(new Event('change'));
+            }
+        }
+    }
+    toggleTranslateOptions();
+}
+
+// Initialize Google Translate
+googleTranslateElementInit();
