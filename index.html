@@ -897,43 +897,43 @@
                 }
             };
 
-            document.addEventListener('DOMContentLoaded', function () {
+
+            function updateContent(lang) {
+                document.querySelectorAll("[data-translate]").forEach(function(element) {
+                    const key = element.getAttribute("data-translate");
+                    if (key && dictionary[lang][key]) {
+                        element.innerHTML = dictionary[lang][key];
+                    }
+                });
+    
+                // Update modal content
+                updateModalContent(lang);
+            }
+    
+            function updateModalContent(lang) {
+                document.querySelectorAll(".modal-body [data-translate]").forEach(function(element) {
+                    const key = element.getAttribute("data-translate");
+                    if (key && dictionary[lang][key]) {
+                        element.innerHTML = dictionary[lang][key];
+                    }
+                });
+            }
+    
+            function translatePage(lang) {
+                updateContent(lang);
+            }
+    
+            document.addEventListener('DOMContentLoaded', function() {
                 const translateOptions = document.querySelectorAll('.translate-options a');
-                translateOptions.forEach(function (option) {
-                    option.addEventListener('click', function (e) {
+                translateOptions.forEach(function(option) {
+                    option.addEventListener('click', function(e) {
                         e.preventDefault();
                         const lang = this.getAttribute('data-lang');
                         translatePage(lang);
                     });
                 });
     
-                function translateText(text, lang) {
-                    if (dictionary[lang] && dictionary[lang][text]) {
-                        return dictionary[lang][text];
-                    }
-                    return text; // Fallback to original text if translation is not found
-                }
-    
-                function updateContent(lang) {
-                    document.querySelectorAll("[data-translate]").forEach(function (element) {
-                        const key = element.getAttribute("data-translate");
-                        if (key && dictionary[lang][key]) {
-                            element.innerHTML = dictionary[lang][key];
-                        }
-                    });
-                }
-    
-                function translatePage(lang) {
-                    updateContent(lang);
-                }
-    
-                // Initialize with default language
-                updateContent('en');
-            });
-    
-            document.addEventListener("DOMContentLoaded", function () {
                 const ttsButtons = document.querySelectorAll('.tts-button');
-    
                 ttsButtons.forEach(button => {
                     button.addEventListener('click', function () {
                         const sectionId = this.getAttribute('data-section');
@@ -952,7 +952,14 @@
                         alert("Your browser does not support text-to-speech.");
                     }
                 }
+    
+                // Initialize with default language
+                updateContent('en');
             });
+
+
+            
+
         </script>
     </body>
     </html>
