@@ -83,6 +83,45 @@
     </section>
 
     <hr class="separator">
+
+    <section class="language-skills" id="language-skills">
+        <h1 data-translate="languageSkills">Language Skills</h1>
+        <div class="language-cards">
+            <div class="language-card" data-lang="vietnamese">
+                <h2 data-translate="vietnamese">Vietnamese</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 100%;"></div>
+                </div>
+                <p data-translate="vietnameseLevel">4/4 (Fluent)</p>
+            </div>
+            <div class="language-card" data-lang="english">
+                <h2 data-translate="english">English</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 100%;"></div>
+                </div>
+                <p data-translate="englishLevel">6.5 IELTS</p>
+            </div>
+            <div class="language-card" data-lang="japanese">
+                <h2 data-translate="japanese">Japanese</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 25%;"></div>
+                </div>
+                <p data-translate="japaneseLevel">1/4 (Elementary)</p>
+            </div>
+        </div>
+        <button class="tts-button" data-section="language-skills" data-translate="readLanguageSkillsSection">Read Language Skills Section</button>
+    </section>
+    
+    <!-- Modal for Language Details -->
+    <div id="language-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <hr class="separator">
+
     
     <section class="awards-certifications" id="awards-certifications">
         <h1 data-translate="awardsCertifications">Awards and Certifications</h1>
@@ -932,6 +971,11 @@
                         translatePage(lang);
                     });
                 });
+
+                
+
+
+                
     
                 const ttsButtons = document.querySelectorAll('.tts-button');
                 ttsButtons.forEach(button => {
@@ -958,8 +1002,93 @@
             });
 
 
+            document.addEventListener('DOMContentLoaded', function() {
+                const languageCards = document.querySelectorAll('.language-card');
+                const modal = document.getElementById('language-modal');
+                const closeModalBtn = document.querySelector('.close-btn');
+                const modalBody = document.getElementById('modal-body');
             
+                const languageData = {
+                    vietnamese: {
+                        title: "Vietnamese",
+                        skills: {
+                            listening: 100,
+                            reading: 100,
+                            speaking: 100,
+                            writing: 100
+                        }
+                    },
+                    english: {
+                        title: "English",
+                        skills: {
+                            listening: 80,
+                            reading: 80,
+                            speaking: 70,
+                            writing: 70
+                        }
+                    },
+                    japanese: {
+                        title: "Japanese",
+                        skills: {
+                            listening: 50,
+                            reading: 40,
+                            speaking: 50,
+                            writing: 30
+                        }
+                    }
+                };
+            
+                languageCards.forEach(card => {
+                    card.addEventListener('click', function() {
+                        const lang = this.getAttribute('data-lang');
+                        const data = languageData[lang];
+                        if (data) {
+                            modalBody.innerHTML = `
+                                <h2>${data.title}</h2>
+                                <div class="language-skill">
+                                    <h3>Listening</h3>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: ${data.skills.listening}%;"></div>
+                                    </div>
+                                </div>
+                                <div class="language-skill">
+                                    <h3>Reading</h3>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: ${data.skills.reading}%;"></div>
+                                    </div>
+                                </div>
+                                <div class="language-skill">
+                                    <h3>Speaking</h3>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: ${data.skills.speaking}%;"></div>
+                                    </div>
+                                </div>
+                                <div class="language-skill">
+                                    <h3>Writing</h3>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: ${data.skills.writing}%;"></div>
+                                    </div>
+                                </div>
+                            `;
+                            modal.style.display = 'flex';
+                        }
+                    });
+                });
+            
+                closeModalBtn.addEventListener('click', function() {
+                    modal.style.display = 'none';
+                });
+            
+                window.addEventListener('click', function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                    }
+                });
 
+
+});
+
+            
         </script>
     </body>
     </html>

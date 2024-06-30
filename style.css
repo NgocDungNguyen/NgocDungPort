@@ -45,7 +45,9 @@ header nav img {
 
 header nav ul {
     display: flex;
+    gap: 20px;
 }
+
 
 header nav ul li {
     list-style: none;
@@ -512,6 +514,51 @@ header nav .search i {
     transform: scale(1.05);
 }
 
+section {
+    padding: 50px 100px;
+    background-color: #2c2d31;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+}
+
+section h1 {
+    font-size: 56px;
+    font-weight: 700;
+    color: #fec86a;
+    font-family: "Libre Baskerville", serif;
+    margin-bottom: 50px;
+}
+
+section .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+}
+
+section .description .line {
+    height: 2.5px;
+    width: 100px;
+    background-color: #fec86a;
+    margin-bottom: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+section .description p {
+    color: #fbfbfb;
+    font-size: 20px;
+    line-height: 1.6;
+    transition: all 0.5s ease-in-out;
+}
+
+section .description p span {
+    color: #fec86a;
+}
+
 .skills {
     display: flex;
     flex-direction: column;
@@ -627,6 +674,7 @@ header nav .search i {
     transition: all ease 0.5s;
 }
 
+
 .portfolio-card .overlay h3 {
     color: #fbfbfb;
     font-size: 24px;
@@ -667,6 +715,7 @@ header nav .search i {
     cursor: pointer;
     transition: all ease 0.5s;
 }
+
 
 .portfolio button:hover {
     background-color: #cc9e4e;
@@ -902,8 +951,108 @@ header nav .search i {
     display: block;
 }
 
+.language-skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 100px;
+    background-color: #2c2d31;
+    transition: all 0.5s ease-in-out;
+}
 
+.language-skills h1 {
+    font-size: 56px;
+    font-weight: 700;
+    color: #fec86a;
+    font-family: "Libre Baskerville", serif;
+    margin-bottom: 50px;
+}
 
+.language-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    gap: 20px;
+}
+
+.language-card {
+    width: 100%;
+    background-color: #3d3e42;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.language-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.language-card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fec86a;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #98999a;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    height: 20px;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    background-color: #fec86a;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.5s ease;
+}
+
+.language-card p {
+    font-size: 16px;
+    color: #fbfbfb;
+}
+
+.language-skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.language-skill h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+.language-skill .progress-bar {
+    width: 70%;
+    height: 15px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.language-skill .progress {
+    height: 100%;
+    background-color: #fec86a;
+}
 
 .tts-button {
     margin-top: 20px;
