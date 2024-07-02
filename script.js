@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeModalBtn = document.querySelector(".close-btn");
     const modalBody = document.getElementById("modal-body");
     const modalImages = document.getElementById("modal-images");
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('results-container');
+    const searchResultsSection = document.getElementById('search-results');
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
     const awardsData = [
         {
@@ -163,8 +168,89 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     ];
 
-     // Function to display initial items
-     function displayInitialItems() {
+    const allData = [
+        
+        {
+            section: "about",
+            title: "About",
+            content: "I am currently pursuing a Bachelor of Information Technology with a minor in Enterprise Systems Development at the Royal Melbourne Institute of Technology. My passion lies in programming and web development, where I have honed my skills in various languages and technologies such as Python, JavaScript, and Node.js. Living and studying at Queensland University of Technology in Australia provided me with an invaluable opportunity to immerse myself in a highly international and professional environment, significantly enhancing both my technical competencies and cultural awareness."
+        },
+        {
+            section: "education",
+            title: "Education",
+            content: "Royal Melbourne Institute of Technology (RMIT) - Bachelor of Information Technology, Minor in Enterprise Systems Development, Expected May 2026 | Current GPA: 3.6. Queensland University of Technology (QLD, Australia) - Bachelor of Engineering (Mechatronics), Jul 2022 - Jun 2023."
+        },
+        {
+            section: "language-skills",
+            title: "Language Skills",
+            content: "Vietnamese: 4/4 (Fluent), English: 6.5 IELTS, Japanese: 1/4 (Elementary)."
+        },
+        {
+            section: "skills",
+            title: "Skills",
+            content: "HTML, CSS, JavaScript, NodeJS, MongoDB, MySQL, GIT, PHP, AWS, Python, Arduino, Scratch."
+        },
+        {
+            section: "portfolio",
+            title: "Projects",
+            content: "HR Management Website, RMIT Team Finding Website, Tracking Weather and Population Website, Tour Booking Website."
+        },
+        {
+            section: "experience",
+            title: "Experience",
+            content: "IT Support Specialist Intern, Technical Controller Part-time, IT and Mechanical Mentor, Sales Associate."
+        },
+        {
+            section: "contact-loc",
+            title: "Contact Me",
+            content: "Email: juneng2108@gmail.com, Phone: +84 865 949 604, Address: Ha Noi, Viet Nam."
+        }
+    ];
+
+    function searchItems(query) {
+        console.log("Searching for:", query); // Debugging log
+        const results = allData.filter(item => {
+            return item.title.toLowerCase().includes(query.toLowerCase()) ||
+                   item.content.toLowerCase().includes(query.toLowerCase());
+        });
+        console.log("Search results:", results); // Debugging log
+        displaySearchResults(results);
+    }
+
+    function displaySearchResults(results) {
+        resultsContainer.innerHTML = ''; // Clear previous results
+        if (results.length > 0) {
+            results.forEach(result => {
+                const resultItem = document.createElement('div');
+                resultItem.classList.add('result-item');
+                resultItem.innerHTML = `
+                    <h3>${result.title}</h3>
+                    <p>${result.content}</p>
+                `;
+                resultItem.addEventListener('click', function() {
+                    document.getElementById(result.section).scrollIntoView({ behavior: 'smooth' });
+                    searchResultsSection.style.display = 'none';
+                });
+                resultsContainer.appendChild(resultItem);
+            });
+        } else {
+            resultsContainer.innerHTML = '<p>No results found</p>';
+        }
+        searchResultsSection.style.display = 'block'; // Show the search results section
+    }
+
+    searchInput.addEventListener('input', function () {
+        const query = searchInput.value.trim();
+        console.log("Input event:", query); // Debugging log
+        if (query.length > 0) {
+            searchItems(query);
+        } else {
+            searchResultsSection.style.display = 'none'; // Hide results section if query is empty
+        }
+    });
+
+    // Function to display initial items
+    function displayInitialItems() {
         awardsDetails.innerHTML = ""; // Clear existing content
         certificationsDetails.innerHTML = ""; // Clear existing content
 
@@ -312,11 +398,8 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(section);
     });
 
-    // Handle hamburger menu
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', function() {
+     // Handle hamburger menu
+     hamburger.addEventListener('click', function() {
         navLinks.classList.toggle('expanded');
         if (navLinks.classList.contains('expanded')) {
             navLinks.style.display = 'flex';
